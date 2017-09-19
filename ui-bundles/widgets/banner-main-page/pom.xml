@@ -7,11 +7,11 @@
         <version>4.3.2-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
-    <artifactId>entando-widget-3-step-mortgage</artifactId>
+    <artifactId>banner-main-page</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-widget-3-step-mortgage</name>
-    <description>A 3 step demo mortgage banner.</description>
+    <name>Entando Bundle: banner-main-page</name>
+    <description>banner-main-page.</description>
     <developers>
         <developer>
             <id>d.minnai</id>
