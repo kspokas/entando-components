@@ -28,36 +28,36 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
 		<sketch x1="2" y1="3" x2="4" y2="3" />
 	</frame>
 	<frame pos="7">
-		<descr>Central Bar right</descr>
-		<sketch x1="5" y1="3" x2="9" y2="3" />
+		<descr>Central Bar Center</descr>
+		<sketch x1="5" y1="3" x2="7" y2="3" />
 	</frame>
 	<frame pos="8">
-		<descr>Central Bar 2 left</descr>
-		<sketch x1="2" y1="4" x2="7" y2="4" />
+		<descr>Central Bar right</descr>
+		<sketch x1="8" y1="3" x2="9" y2="3" />
 	</frame>
 	<frame pos="9">
-		<descr>Central Bar 2 right</descr>
-		<sketch x1="8" y1="4" x2="9" y2="4" />
+		<descr>Banner Advisor</descr>
+		<sketch x1="2" y1="4" x2="9" y2="4" />
 	</frame>
 	<frame pos="10">
-		<descr>Central Bar 3</descr>
-		<sketch x1="0" y1="5" x2="11" y2="5" />
+		<descr>Full</descr>
+		<sketch x1="2" y1="5" x2="9" y2="5" />
 	</frame>
 	<frame pos="11">
-		<descr>Central Bar 4</descr>
-		<sketch x1="2" y1="6" x2="9" y2="6" />
+		<descr>Footer Left</descr>
+		<sketch x1="2" y1="6" x2="5" y2="6" />
 	</frame>
 	<frame pos="12">
-		<descr>footer 1</descr>
-		<sketch x1="0" y1="7" x2="11" y2="7" />
+		<descr>Footer right</descr>
+		<sketch x1="6" y1="6" x2="9" y2="6" />
 	</frame>
 	<frame pos="13">
-		<descr>footer 2 left</descr>
-		<sketch x1="0" y1="8" x2="5" y2="8" />
+		<descr>Footer 2 Left</descr>
+		<sketch x1="2" y1="7" x2="5" y2="7" />
 	</frame>
 	<frame pos="14">
-		<descr>footer 2 right</descr>
-		<sketch x1="6" y1="8" x2="11" y2="8" />
+		<descr>Footer 2 right</descr>
+		<sketch x1="6" y1="7" x2="9" y2="7" />
 	</frame>
 </frames>', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
@@ -108,7 +108,7 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
                 <!-- menu -->
                 <div class="navbar-collapse collapse" id="navbar-menu">
 
-                    <!--Navbar left--> 
+                    <!--Navbar left-->
                     <ul class="nav navbar-nav nav-custom-left">
                         <!--frame 0 1-->
                         <@wp.show frame=0 />
@@ -133,7 +133,7 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 text-center">
-                        <!--frame 4-->    
+                        <!--frame 4-->
                         <@wp.show frame=4 />
 
                         <div class="home-fullscreen" id="">
@@ -147,7 +147,7 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
                                 </div>
                             </div>
                         </div>
-                        <!--frame 4-->  
+                        <!--frame 4-->
 
                     </div>
                 </div>
@@ -160,44 +160,44 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <!--frame 5-->    
+                        <!--frame 5-->
                         <@wp.show frame=5 />
                         <!--frame 5-->
                     </div>
                 </div>
-            </div> 
+            </div>
         </section>
 
         <section class="section">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-5">
-                        <!--frame 6-->  
+                        <!--frame 6-->
                         <@wp.show frame=6 />
-                        <!--frame 5-->   
+                        <!--frame 5-->
                     </div>
                     <div class="col-sm-7">
-                        <!--frame 7 frame bpm -->   
+                        <!--frame 7 frame bpm -->
                         <@wp.show frame=7 />
-                        <!--frame 7-->   
+                        <!--frame 7-->
                     </div>
                 </div>
-            </div> 
+            </div>
         </section>
 
         <section class="section bg-light">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-8">
-                        <!--frame 8-->   
+                        <!--frame 8-->
                         <@wp.show frame=8/>
-                        <!--frame 8-->   
+                        <!--frame 8-->
                     </div>
 
                     <div class="col-sm-4">
-                        <!--frame 9--> 
+                        <!--frame 9-->
                         <@wp.show frame=9 />
-                        <!--frame 9-->   
+                        <!--frame 9-->
                     </div>
                 </div>
             </div>
@@ -205,7 +205,7 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
 
         <section class="section">
              <div class="col-sm-12">
-                 <!--frame 10-->    
+                 <!--frame 10-->
                    <@wp.show frame=10 />
                  <!--frame 10-->
             </div>
@@ -215,12 +215,12 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
             <div class="container">
                 <div class="col-md-12">
                     <div class="text-center">
-                        <!--frame 11-->    
+                        <!--frame 11-->
                         <@wp.show frame=11 />
                     </div>
                     <!--frame 11-->
                 </div>
-            </div> 
+            </div>
         </section>
 
         <!-- FOOTER -->
@@ -228,25 +228,25 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
             <div class="container text-center">
                 <div class="row">
                     <div class="col-md-12">
-                        <!--frame 12-->    
+                        <!--frame 12-->
                         <@wp.show frame=12 />
-                        <!--frame 12-->    
+                        <!--frame 12-->
                     </div>
                 </div> <!-- end row -->
 
                 <div class="row">
                     <div class="col-sm-6">
-                        <!--frame 13-->    
+                        <!--frame 13-->
                         <@wp.show frame=13 />
-                        <!--frame 13-->   
+                        <!--frame 13-->
                     </div>
                     <div class="col-sm-6">
-                        <!--frame 14-->    
+                        <!--frame 14-->
                         <@wp.show frame=14 />
-                        <!--frame 14-->   
+                        <!--frame 14-->
                     </div>
-                </div> 
-            </div> 
+                </div>
+            </div>
         </footer>
         <!-- END FOOTER -->
 
