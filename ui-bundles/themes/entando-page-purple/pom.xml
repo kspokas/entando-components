@@ -7,10 +7,10 @@
         <version>4.3.2-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
-    <artifactId>entando-page-light</artifactId>
+    <artifactId>entando-page-purple</artifactId>
     <groupId>org.entando.entando.bundles.pages</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-page-light</name>
+    <name>Entando Bundle: entando-page-purple</name>
     <description>Full width layout for REDHAT BPM, built with Light layout based on Bootstrap 3.</description>
     <developers>
         <developer>
@@ -101,7 +101,19 @@
         </dependency>
         <dependency>
             <groupId>org.entando.entando.bundles.widgets</groupId>
+            <artifactId>left_columns_mortgage</artifactId>
+            <version>4.3.2-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.bundles.widgets</groupId>
             <artifactId>entando-widget-search_result_inspinia</artifactId>
+            <version>4.3.2-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.bundles.widgets</groupId>
+            <artifactId>right_columns_help</artifactId>
             <version>4.3.2-SNAPSHOT</version>
             <type>war</type>
         </dependency>

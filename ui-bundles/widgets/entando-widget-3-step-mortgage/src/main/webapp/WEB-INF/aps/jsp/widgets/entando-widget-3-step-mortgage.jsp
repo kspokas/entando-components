@@ -21,8 +21,11 @@
                     <button type="button" class="btn btn-primary btn-circle">3</button>
                     <p><strong>Get the funds</strong></p>
                     <p>You'll receive your funds directly <br>to your bank in as little as a week!</p>
-                </div> 
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+
+
