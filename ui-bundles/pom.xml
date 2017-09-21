@@ -59,6 +59,7 @@
         <module>widgets/entando-inspinia-meter-center-page</module>
         <module>widgets/entando-inspinia-meter-right-page</module>
         <module>widgets/meeting_list</module>
+        <module>widgets/entando-widget-data_report_tweets</module>
         <!--
         <module>misc/entando-misc-light</module>
         <module>themes/entando-page-light</module>
