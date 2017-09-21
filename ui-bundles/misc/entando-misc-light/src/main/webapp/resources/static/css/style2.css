@@ -884,7 +884,7 @@ textarea.form-control {
 }
 
 .back-to-top:hover,.bg-custom,.btn-custom,.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover,
-.navbar-custom  {
+.navbar-custom.light  {
     background: url(../img/Foto_Header.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -995,6 +995,16 @@ textarea.form-control {
     background: url(../img/stelle_Viola.png) no-repeat center center;
     height:34px;
     margin-bottom:10px;
+}
+.avarage{
+    background: url(../img/banner_avarage.png) no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 8em;
+}
+.security{
 }
 .subtitle{
     font-size:16px;
