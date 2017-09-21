@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+    <code>inspinia-meter-center-page</code>
+    <description></description>
+    <artifact>
+        <artifactId>${project.artifactId}</artifactId>
+        <groupId>${project.groupId}</groupId>
+        <version>${project.version}</version>
+    </artifact>
+    <dependencies>
+        <code>entando-misc-bootstrap</code>
+    </dependencies>
+    <installation>
+        <environment code="production">
+            <defaultSqlResources>
+                <datasource name="portDataSource">
+                    classpath:sql/bundles/inspinia-meter-center-page/port_data_production.sql
+                </datasource>
+                <datasource name="servDataSource">
+                    classpath:sql/bundles/inspinia-meter-center-page/serv_data_production.sql
+                </datasource>
+            </defaultSqlResources>
+        </environment>
+    </installation>
+</component>

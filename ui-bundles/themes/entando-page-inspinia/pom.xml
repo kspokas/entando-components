@@ -68,9 +68,28 @@
             <version>4.3.2-SNAPSHOT</version>
             <type>war</type>
         </dependency>
+
         <dependency>
             <groupId>org.entando.entando.bundles.widgets</groupId>
             <artifactId>entando-widget-language_choose_inspinia</artifactId>
+            <version>4.3.2-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.bundles.widgets</groupId>
+            <artifactId>entando-inspinia-meter-left-page</artifactId>
+            <version>4.3.2-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.bundles.widgets</groupId>
+            <artifactId>entando-inspinia-meter-center-page</artifactId>
+            <version>4.3.2-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.bundles.widgets</groupId>
+            <artifactId>entando-inspinia-meter-right-page</artifactId>
             <version>4.3.2-SNAPSHOT</version>
             <type>war</type>
         </dependency>
@@ -101,6 +120,18 @@
         <dependency>
             <groupId>org.entando.entando.bundles.contents</groupId>
             <artifactId>entando-content-generic</artifactId>
+            <version>4.3.2-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.bundles.widgets</groupId>
+            <artifactId>right_columns_help</artifactId>
+            <version>4.3.2-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.bundles.widgets</groupId>
+            <artifactId>left_columns_mortgage</artifactId>
             <version>4.3.2-SNAPSHOT</version>
             <type>war</type>
         </dependency>
