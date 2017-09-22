@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
@@ -7,11 +7,11 @@
         <version>4.3.2-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
-    <artifactId>entando-widget-3-step-mortgage</artifactId>
+    <artifactId>entando-widget-banner_main_page_light</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-widget-3-step-mortgage</name>
-    <description>A 3 step demo mortgage banner.</description>
+    <name>Entando Bundle: entando-widget-banner_main_page_light</name>
+    <description>entando-widget-banner_main_page_light.</description>
     <developers>
         <developer>
             <id>d.minnai</id>

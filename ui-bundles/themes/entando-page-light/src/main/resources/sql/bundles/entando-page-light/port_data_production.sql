@@ -127,20 +127,7 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
                     <div class="col-sm-12 text-center">
                         <!--frame 4-->
                         <@wp.show frame=4 />
-
-                        <div class="home-fullscreen" id="">
-                            <div class="full-screen">
-                                <div class="home-wrapper home-wrapper-alt">
-                                    <h1 class="font-light text-white">Personal Mortgage from 9000 to 999.999$</h1>
-                                    <h4 class="text-light">Get feedback within 24 hours - No obligation</h4>
-                                    <a href="#mortgage">
-                                        <img alt="logo-arrow" class="logo-img" src="<@wp.imgURL />Fill_1.png">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                         <!--frame 4-->
-
                     </div>
                 </div>
             </div>
@@ -187,7 +174,6 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
             <@wp.show frame=9 />
             <!--frame 9-->
         </section>
-
         <section class="section">
             <!--frame 10-->
             <@wp.show frame=10 />
