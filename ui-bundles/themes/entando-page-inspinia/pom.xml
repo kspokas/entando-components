@@ -170,5 +170,11 @@
             <version>4.3.2-SNAPSHOT</version>
             <type>war</type>
         </dependency>
+        <dependency>
+            <groupId>org.entando.entando.bundles.widgets</groupId>
+            <artifactId>entando-widget-3-steps-mortgage-light</artifactId>
+            <version>4.3.2-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
     </dependencies>
 </project>

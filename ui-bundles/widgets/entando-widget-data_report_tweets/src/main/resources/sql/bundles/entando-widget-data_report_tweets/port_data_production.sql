@@ -5,8 +5,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked)
-VALUES ('entando-widget-data_report_tweets', 'entando-widget-data_report_tweets', NULL, NULL, '<div class="row">
-                <div class="col-lg-6">
+VALUES ('entando-widget-data_report_tweets', 'entando-widget-data_report_tweets', NULL, NULL, '
                     <div class="ibox float-e-margins">
                         <div class="ibox-title">
                             <h5>New data for the report</h5>
@@ -93,7 +92,4 @@ VALUES ('entando-widget-data_report_tweets', 'entando-widget-data_report_tweets'
                                 </li>
                             </ul>
                         </div>
-                    </div>
-                </div>
-
-                </div>', 1);
+                    </div>', 1);

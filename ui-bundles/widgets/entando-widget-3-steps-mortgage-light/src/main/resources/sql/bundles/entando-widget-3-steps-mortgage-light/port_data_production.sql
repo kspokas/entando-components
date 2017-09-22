@@ -1,10 +1,16 @@
-<%@ taglib prefix="wp" uri="/aps-core" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-3-steps-mortgage-light', '<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">entando-widget-3-steps-mortgage-light</property>
+<property key="it">entando-widget-3-steps-mortgage-light</property>
+</properties>', NULL, NULL, NULL, NULL, 1, NULL);
 
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked)
+VALUES ('entando-widget-3-steps-mortgage-light', 'entando-widget-3-steps-mortgage-light', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.info key="langs" var="langsVar" />
+<@wp.info key="currentLang" var="currentLangVar" />
 <div class="text-center">
     <div class="title-box-icon">
         <h2 class="title-mortgage">Mortgage Process</h2>
-
         <div class="progress-dots">
             <div class="progress-dots-row">
                 <div class="progress-dots-step">
@@ -20,12 +26,9 @@
                 <div class="progress-dots-step">
                     <button type="button" class="btn btn-primary btn-circle">3</button>
                     <p><strong>Get the funds</strong></p>
-                    <p>You'll receive your funds directly <br>to your bank in as little as a week!</p>
+                    <p>You''ll receive your funds directly <br>to your bank in as little as a week!</p>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-
-
+</div>', 1);

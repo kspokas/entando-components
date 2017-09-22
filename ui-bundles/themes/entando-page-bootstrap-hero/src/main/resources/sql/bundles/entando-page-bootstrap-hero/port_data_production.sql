@@ -1,5 +1,6 @@
 INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('entando-page-bootstrap-hero', 'Bootstrap - Hero Unit', '<frames>
-	<frame pos="0">
+
+
 		<descr>Navbar 1</descr>
 		<defaultWidget code="entando-widget-language_choose" />
 	</frame>
