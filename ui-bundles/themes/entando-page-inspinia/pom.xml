@@ -100,7 +100,7 @@
         </dependency>
         <dependency>
             <groupId>org.entando.entando.bundles.widgets</groupId>
-            <artifactId>meeting_list</artifactId>
+            <artifactId>entando-widget-meeting_list-purple</artifactId>
             <version>4.3.2-SNAPSHOT</version>
             <type>war</type>
         </dependency>
@@ -142,13 +142,13 @@
         </dependency>
         <dependency>
             <groupId>org.entando.entando.bundles.widgets</groupId>
-            <artifactId>right_columns_help</artifactId>
+            <artifactId>entando-widget-right_col_help_purple</artifactId>
             <version>4.3.2-SNAPSHOT</version>
             <type>war</type>
         </dependency>
         <dependency>
             <groupId>org.entando.entando.bundles.widgets</groupId>
-            <artifactId>left_columns_mortgage</artifactId>
+            <artifactId>entando-widget-left_columns_mortgage</artifactId>
             <version>4.3.2-SNAPSHOT</version>
             <type>war</type>
         </dependency>
