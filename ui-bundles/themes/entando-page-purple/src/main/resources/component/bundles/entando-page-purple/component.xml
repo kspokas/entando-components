@@ -15,8 +15,8 @@
         <code>entando-widget-navigation_bar</code>
         <code>entando-widget-login_form</code>
         <code>entando-content-generic</code>
-        <code>banner-advisors</code>
-        <code>banner-main-page</code>
+        <!--        <code>banner-advisors</code>
+        <code>banner-main-page</code>-->
     </dependencies>
     <installation>
         <environment code="production">

@@ -51,7 +51,6 @@
         <module>widgets/entando-widget-3-steps-mortgage-light</module>
         <module>content-types/entando-content-generic</module>
         <module>widgets/entando-widget-language_choose</module>
-        <!--<module>widgets/entando-widget-banner-main-page</module>-->
         <module>widgets/entando-widget-banner-advisors</module>
         <module>widgets/entando-widget-left_columns_mortgage</module>
         <module>widgets/entando-widget-right_col_help_purple</module>
@@ -60,14 +59,14 @@
         <module>widgets/entando-inspinia-meter-right-page</module>
         <module>widgets/entando-widget-meeting_list-purple</module>
         <module>widgets/entando-widget-data_report_tweets</module>
-        <module>widgets/entando-widget-banner_avarage_light</module>
-        <module>widgets/entando-widget-banner_main_page_light</module>
-        <module>widgets/entando-widget-security_banner_light</module>
         <module>misc/entando-misc-light</module>
         <module>themes/entando-page-light</module>
         <module>themes/entando-page-purple</module>
-		<!--
-
+        <module>widgets/entando-widget-banner-main-page</module>
+        <module>widgets/entando-widget-banner_avarage_light</module>
+        <module>widgets/entando-widget-banner_main_page_light</module>
+        <module>widgets/entando-widget-security_banner_light</module>
+        <!--
         <module>app-views/entando-app-view-addressbook-default</module>
         <module>widgets/entando-widget-navigation_bar</module>
         <module>widgets/entando-widget-navigation_menu</module>
