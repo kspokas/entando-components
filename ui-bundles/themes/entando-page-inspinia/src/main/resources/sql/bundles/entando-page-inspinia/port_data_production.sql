@@ -172,10 +172,11 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
                                 <@wp.show frame=2 />
                                 <@wp.show frame=3 />
                                 <@wp.show frame=4 />
+                            </li>
                         </ul>
                     </nav>
                 </div>
-                <div class="row white-bg" style="padding-top:20px; padding-bottom:10px; border-bottom:2px solid #e7eaec;">
+                <div class="row" >
                     <div class="col-md-4">
                         <div class="white-bg">
                             <@wp.show frame=5 />
@@ -192,22 +193,17 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
                         </div>
                     </div>
                 </div>
-                <div class="row white-bg" style="padding-top:20px; padding-bottom:10px; border-bottom:2px solid #e7eaec;">
+                <div class="row" >
                     <div class="col-md-12">
-                        <div class="white-bg">
-                            <@wp.show frame=9 />
-                        </div>
+                        <@wp.show frame=9 />
                     </div>
                 </div>
-                <div class="row white-bg" style="padding-top:20px; padding-bottom:10px; border-bottom:2px solid #e7eaec;">
+                <div class="row" >
                     <div class="col-md-12">
-                        <div class="white-bg">
-                            <@wp.show frame=11 />
-                        </div>
+                        <@wp.show frame=11 />
                     </div>
-
                 </div>
-                <div class="row white-bg" style="padding-top:20px; padding-bottom:10px; border-bottom:2px solid #e7eaec;">
+                <div class="m-t-md">
                     <div class="col-md-6">
                         <div class="white-bg">
                             <@wp.show frame=13 />
@@ -219,7 +215,7 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
                         </div>
                     </div>
                 </div>
-                <div class="row white-bg" style="padding-top:20px; padding-bottom:10px; border-bottom:2px solid #e7eaec;">
+                <div class="row" >
                     <@wp.show frame=16 />
                 </div>
                 <div class="row">

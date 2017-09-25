@@ -22,146 +22,143 @@
               <jsp:include page="inc/header-inclusions.jsp" />
     </head>
     <body class="pace-done">
-    <div class="pace  pace-inactive">
-        <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
-            <div class="pace-progress-inner"></div>
+        <div class="pace  pace-inactive">
+            <div class="pace-progress" data-progress-text="100%" data-progress="99" style="transform: translate3d(100%, 0px, 0px);">
+                <div class="pace-progress-inner"></div>
+            </div>
+            <div class="pace-activity"></div>
         </div>
-        <div class="pace-activity"></div>
-    </div>
-    <div id="wrapper">
-        <nav class="navbar-default navbar-static-side" role="navigation">
-            <div class="sidebar-collapse">
-                <ul class="nav metismenu" id="side-menu">
+        <div id="wrapper">
+            <nav class="navbar-default navbar-static-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav metismenu" id="side-menu">
 
-                    <li class="nav-header">
-                        <div class="dropdown profile-element">
-                            <c:choose>
-                                <c:when test="${sessionScope.currentUser != 'guest'}">
+                        <li class="nav-header">
+                            <div class="dropdown profile-element">
+                                <c:choose>
+                                    <c:when test="${sessionScope.currentUser != 'guest'}">
                                         <span>
                                             <img alt="image" class="" src="<wp:imgURL />entando-logo.png">
                                         </span>
-                                </c:when>
-                                <c:otherwise>
+                                    </c:when>
+                                    <c:otherwise>
                                         <span>
                                             <img alt="image" class="" src="<wp:imgURL />entando-logo-1.png">
                                         </span>
-                                </c:otherwise>
-                            </c:choose>
-                            <br>
-                            <wp:show frame="0" />
-                        </div>
-                        <div class="logo-element">
-                            E
-                        </div>
-                    </li>
+                                    </c:otherwise>
+                                </c:choose>
+                                <br>
+                                <wp:show frame="0" />
+                            </div>
+                            <div class="logo-element">
+                                E
+                            </div>
+                        </li>
 
-                    <wp:show frame="8" />
-                    <wp:show frame="10" />
-                    <wp:show frame="12" />
-                    <wp:show frame="15" />
-                    <wp:show frame="17" />
-                </ul>
-            </div>
-        </nav>
-        <div id="page-wrapper" class="gray-bg dashbard-1">
-            <div class="row border-bottom">
-                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                    <div class="navbar-header">
-                        <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">
-                            <i class="fa fa-bars"></i>
-                        </a>
-                    </div>
-                    <ul class="nav navbar-top-links navbar-right">
-                        <li class="dropdown">
+                        <wp:show frame="8" />
+                        <wp:show frame="10" />
+                        <wp:show frame="12" />
+                        <wp:show frame="15" />
+                        <wp:show frame="17" />
+                    </ul>
+                </div>
+            </nav>
+            <div id="page-wrapper" class="gray-bg dashbard-1">
+                <div class="row border-bottom">
+                    <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                        <div class="navbar-header">
+                            <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                        </div>
+                        <ul class="nav navbar-top-links navbar-right">
+                            <li class="dropdown">
                             <wp:show frame="1" />
                             <wp:show frame="2" />
                             <wp:show frame="3" />
                             <wp:show frame="4" />
-                    </ul>
-                </nav>
-            </div>
-            <div class="row white-bg" style="padding-top:20px; padding-bottom:10px; border-bottom:2px solid #e7eaec;">
-                <div class="col-md-4">
-                    <div class="white-bg">
-                        <wp:show frame="5" />
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="row" >
+                    <div class="col-md-4">
+                        <div class="white-bg">
+                            <wp:show frame="5" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="white-bg">
+                            <wp:show frame="6" />
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="white-bg">
+                            <wp:show frame="7" />
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="white-bg">
-                        <wp:show frame="6" />
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="white-bg">
-                        <wp:show frame="7" />
-                    </div>
-                </div>
-            </div>
-            <div class="row white-bg" style="padding-top:20px; padding-bottom:10px; border-bottom:2px solid #e7eaec;">
-                <div class="col-md-12">
-                    <div class="white-bg">
+                <div class="row" >
+                    <div class="col-md-12">
                         <wp:show frame="9" />
                     </div>
                 </div>
-            </div>
-            <div class="row white-bg" style="padding-top:20px; padding-bottom:10px; border-bottom:2px solid #e7eaec;">
-                <div class="col-md-12">
-                    <div class="white-bg">
+                <div class="row" >
+                    <div class="col-md-12">
                         <wp:show frame="11" />
                     </div>
-                </div>
 
-            </div>
-            <div class="row white-bg" style="padding-top:20px; padding-bottom:10px; border-bottom:2px solid #e7eaec;">
-                <div class="col-md-6">
-                    <div class="white-bg">
-                        <wp:show frame="13" />
-                    </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="white-bg">
-                        <wp:show frame="14" />
-                    </div>
-                </div>
-            </div>
-            <div class="row white-bg" style="padding-top:20px; padding-bottom:10px; border-bottom:2px solid #e7eaec;">
-                <wp:show frame="16" />
-            </div>
-            <div class="row">
-                <div class="wrapper wrapper-content">
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <wp:show frame="18" />
-                        </div>
-                        <div class="col-lg-4">
-                            <wp:show  frame="19" />
-                        </div>
-                        <div class="col-lg-4">
-                            <wp:show  frame="20" />
+                <div class="m-t-md">
+                    <div class="col-md-6">
+                        <div class="white-bg">
+                            <wp:show frame="13" />
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-4">
-                            <wp:show frame="21" />
-                        </div>
-                        <div class="col-lg-4">
-                            <wp:show  frame="22" />
-                        </div>
-                        <div class="col-lg-4">
-                            <wp:show  frame="23" />
+                    <div class="col-md-6">
+                        <div class="white-bg">
+                            <wp:show frame="14" />
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="footer">
-                    <wp:show frame="24" />
+                <div class="row" >
+                    <wp:show frame=16 />
+                </div>
+                <div class="row">
+                    <div class="wrapper wrapper-content">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <wp:show frame="18" />
+                            </div>
+                            <div class="col-lg-4">
+                                <wp:show  frame="19"/>
+                            </div>
+                            <div class="col-lg-4">
+                                <wp:show  frame="20" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <wp:show frame="21" />
+                            </div>
+                            <div class="col-lg-4">
+                                <wp:show  frame="22"/>
+                            </div>
+                            <div class="col-lg-4">
+                                <wp:show  frame="23" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="footer">
+                        <wp:show frame="24" />
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    </div>
-    </body>
+</body>
 </html>
 
 
