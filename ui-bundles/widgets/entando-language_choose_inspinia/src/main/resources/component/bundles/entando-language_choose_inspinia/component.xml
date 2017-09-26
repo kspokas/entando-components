@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component>
-    <code>entando-widget-3-steps-mortgage-light</code>
-    <description>Banner 3 steps light</description>
+    <code>entando-language_choose_inspinia</code>
+    <description>Widget: Choose Language</description>
     <artifact>
         <artifactId>${project.artifactId}</artifactId>
         <groupId>${project.groupId}</groupId>
         <version>${project.version}</version>
     </artifact>
+    <!--	<dependencies>
+            <code>entando-misc-bootstrap</code>
+    </dependencies>-->
     <installation>
         <environment code="production">
             <defaultSqlResources>
                 <datasource name="portDataSource">
-                    classpath:sql/bundles/entando-widget-3-steps-mortgage-light/port_data_production.sql
+                    classpath:sql/bundles/entando-language_choose_inspinia/port_data_production.sql
                 </datasource>
                 <datasource name="servDataSource">
-                    classpath:sql/bundles/entando-widget-3-steps-mortgage-light/serv_data_production.sql
+                    classpath:sql/bundles/entando-language_choose_inspinia/serv_data_production.sql
                 </datasource>
             </defaultSqlResources>
         </environment>

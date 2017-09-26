@@ -7,21 +7,16 @@
         <version>4.3.2-SNAPSHOT</version>
         <relativePath>../../pom.xml</relativePath>
     </parent>
-    <artifactId>entando-widget-language_choose_inspinia</artifactId>
+    <artifactId>entando-language_choose_purple_light</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-widget-language_choose_inspinia</name>
+    <name>Entando Bundle: Language choose purple/light</name>
     <description>A drop-down menu sporting all the languages configured in your application.</description>
     <developers>
         <developer>
             <id>d.minnai</id>
             <name>Davide Minnai</name>
             <email>d.minnai@entando.com</email>
-        </developer>
-        <developer>
-            <id>a.scalici</id>
-            <name>Alessio Scalici</name>
-            <email>a.scalici@entando.com</email>
         </developer>
     </developers>
     <url>http://www.entando.com/</url>
