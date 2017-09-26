@@ -82,48 +82,62 @@
                     </nav>
                 </div>
                 <div class="row" >
-                    <div class="col-md-4">
-                        <div class="white-bg">
-                            <wp:show frame="5" />
+                    <div class="wrapper wrapper-content">
+                        <div class="col-md-4">
+                            <div class="white-bg">
+                                <wp:show frame="5" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="white-bg">
-                            <wp:show frame="6" />
+                        <div class="col-md-4">
+                            <div class="white-bg">
+                                <wp:show frame="6" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="white-bg">
-                            <wp:show frame="7" />
+                        <div class="col-md-4">
+                            <div class="white-bg">
+                                <wp:show frame="7" />
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="row" >
-                    <div class="col-md-12">
-                        <wp:show frame="9" />
+                    <div class="wrapper wrapper-content">
+                        <div class="col-md-12">
+                            <wp:show frame="9" />
+                        </div>
                     </div>
                 </div>
                 <div class="row" >
-                    <div class="col-md-12">
-                        <wp:show frame="11" />
+                    <div class="wrapper wrapper-content">
+                        <div class="col-md-12">
+                            <wp:show frame="11" />
+                        </div>
                     </div>
+                </div>
 
-                </div>
-                <div class="m-t-md">
-                    <div class="col-md-6">
-                        <div class="white-bg">
-                            <wp:show frame="13" />
+                <div class="">
+                    <div class="wrapper wrapper-content">
+                        <div class="col-md-6">
+                            <div class="white-bg">
+                                <wp:show frame="13" />
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="white-bg">
+                                <wp:show frame="14" />
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <div class="white-bg">
-                            <wp:show frame="14" />
+                </div>
+
+                <div class="row">
+                    <div class="wrapper wrapper-content">
+                        <div class="col-md-12" >
+                            <wp:show frame="16" />
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12" >
-                    <wp:show frame=16 />
-                </div>
+
                 <div class="row">
                     <div class="wrapper wrapper-content">
                         <div class="row">
@@ -131,7 +145,7 @@
                                 <wp:show frame="18" />
                             </div>
                             <div class="col-lg-4">
-                                <wp:show  frame="19"/>
+                                <wp:show  frame="19" />
                             </div>
                             <div class="col-lg-4">
                                 <wp:show  frame="20" />
@@ -160,6 +174,7 @@
     </div>
 </body>
 </html>
+
 
 
 
