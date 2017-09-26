@@ -11,7 +11,7 @@
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
     <name>Entando Bundle: inspinia-meter-center-page</name>
-    <description>entando-widget-3-steps-mortgage-light</description>
+    <description>Banner 3 steps light</description>
     <developers>
         <developer>
             <id>f.locci</id>

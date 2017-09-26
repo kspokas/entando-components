@@ -1,7 +1,7 @@
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-3-steps-mortgage-light', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">entando-widget-3-steps-mortgage-light</property>
-<property key="it">entando-widget-3-steps-mortgage-light</property>
+<property key="en">Banner 3 steps light</property>
+<property key="it">Banner 3 steps light</property>
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked)

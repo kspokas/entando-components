@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component>
     <code>entando-widget-3-steps-mortgage-light</code>
-    <description></description>
+    <description>Banner 3 steps light</description>
     <artifact>
         <artifactId>${project.artifactId}</artifactId>
         <groupId>${project.groupId}</groupId>
         <version>${project.version}</version>
     </artifact>
     <dependencies>
-        <code>entando-misc-bootstrap</code>
     </dependencies>
     <installation>
         <environment code="production">
