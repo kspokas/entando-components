@@ -1028,3 +1028,8 @@ textarea.form-control {
 .margin-top-email{
     margin:  22px 0 0 0;
 }
+.editableform .control-group {
+    margin-bottom: 0;
+    white-space: nowrap;
+    line-height: 29px;
+}
