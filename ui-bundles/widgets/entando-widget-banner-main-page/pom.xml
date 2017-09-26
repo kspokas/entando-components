@@ -10,8 +10,8 @@
     <artifactId>entando-widget-banner-main-page</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-widget-banner-main-page</name>
-    <description>entando-widget-banner-main-page.</description>
+    <name>Entando Bundle: Main banner Purple</name>
+    <description>Main banner Purple.</description>
     <developers>
         <developer>
             <id>d.minnai</id>
