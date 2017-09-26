@@ -10,8 +10,8 @@
     <artifactId>entando-widget-right_col_help_purple</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-widget-right_col_help_purple</name>
-    <description>entando-widget-right_col_help_purple.</description>
+    <name>Entando Bundle: Right col Help Purple</name>
+    <description>Right col Help Purple.</description>
     <developers>
         <developer>
             <id>d.minnai</id>

@@ -1,10 +1,11 @@
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-right_col_help_purple', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-    <property key="en">entando-widget-right_col_help_purple</property>
-    <property key="it">entando-widget-right_col_help_purple </property>
+    <property key="en">Right col Help Purple</property>
+    <property key="it">Right col Help Purple </property>
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-right_col_help_purple', 'entando-widget-right_col_help_purple', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<div class="gray">
 <div class="title-box-icon">
     <h2 class="title">Need some help?</h2>
     <p class="margin-top"><strong>Call us on </strong></p>
@@ -32,4 +33,14 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
 <div class="security-logos">
     <img alt="acme-logo" class="logo-security" src="<@wp.imgURL />Loghi_Security.png">
 </div>
-</div>', 1);
+</div>
+</div>
+<style>
+.gray{
+background: #f1f1f1;
+padding: .6em;
+}
+.security-logos {
+    margin: 95px 0 0 0;
+}
+</style>', 1);
