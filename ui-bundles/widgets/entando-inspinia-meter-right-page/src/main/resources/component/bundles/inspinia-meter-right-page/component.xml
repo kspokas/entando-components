@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component>
     <code>inspinia-meter-right-page</code>
-    <description></description>
+    <description>meter right Inspinia</description>
     <artifact>
         <artifactId>${project.artifactId}</artifactId>
         <groupId>${project.groupId}</groupId>

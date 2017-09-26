@@ -10,8 +10,8 @@
     <artifactId>entando-inspinia-meter-right-page</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: inspinia-meter-right-page</name>
-    <description>entando-inspinia-meter-right-page</description>
+    <name>Entando Bundle: meter left Inspinia</name>
+    <description>meter right Inspinia</description>
     <developers>
         <developer>
             <id>f.locci</id>

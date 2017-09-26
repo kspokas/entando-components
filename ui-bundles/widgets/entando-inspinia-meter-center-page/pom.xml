@@ -10,8 +10,8 @@
     <artifactId>entando-inspinia-meter-center-page</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: inspinia-meter-center-page</name>
-    <description>entando-inspinia-meter-center-page</description>
+    <name>Entando Bundle: meter center Inspinia</name>
+    <description>meter center Inspinia</description>
     <developers>
         <developer>
             <id>f.locci</id>
