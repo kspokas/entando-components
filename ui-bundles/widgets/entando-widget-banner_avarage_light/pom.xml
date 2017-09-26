@@ -10,8 +10,8 @@
     <artifactId>entando-widget-banner_avarage_light</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-widget-banner_avarage_light</name>
-    <description>entando-entando-widget-banner_avarage_light</description>
+    <name>Entando Bundle: Banner avarage Light</name>
+    <description>Banner avarage Light</description>
     <developers>
         <developer>
             <id>d.minnai</id>

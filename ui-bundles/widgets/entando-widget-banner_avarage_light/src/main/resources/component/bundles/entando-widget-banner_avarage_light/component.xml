@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component>
     <code>entando-widget-banner_avarage_light</code>
-    <description></description>
+    <description>Banner avarage Light</description>
     <artifact>
         <artifactId>${project.artifactId}</artifactId>
         <groupId>${project.groupId}</groupId>
