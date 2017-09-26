@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component>
     <code>entando-widget-security_banner_light</code>
-    <description>Widget: Choose Language</description>
+    <description>Security banner light </description>
     <artifact>
         <artifactId>${project.artifactId}</artifactId>
         <groupId>${project.groupId}</groupId>

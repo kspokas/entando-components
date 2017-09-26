@@ -1,7 +1,7 @@
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-data_report_tweets', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">entando-widget-data_report_tweets</property>
-<property key="it">entando-widget-data_report_tweets</property>
+<property key="en">data report tweets Inspinia</property>
+<property key="it">data report tweets Inspinia</property>
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked)

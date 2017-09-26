@@ -1,7 +1,7 @@
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-meeting_list-purple', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-    <property key="en">entando-widget-meeting_list-purple</property>
-    <property key="it">entando-widget-meeting_list-purple </property>
+    <property key="en">Meeting calendar list Inspinia</property>
+    <property key="it">Meeting calendar list Inspinia</property>
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-meeting_list-purple', 'entando-widget-meeting_list-purple', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>

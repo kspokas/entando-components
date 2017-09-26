@@ -10,8 +10,8 @@
     <artifactId>entando-widget-data_report_tweets</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-widget-data_report_tweets</name>
-    <description>entando-widget-data_report_tweets</description>
+    <name>Entando Bundle: data report tweets Inspinia</name>
+    <description>data report tweets inspinia Inspinia</description>
     <developers>
         <developer>
             <id>f.locci</id>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component>
     <code>entando-widget-meeting_list-purple</code>
-    <description>Widget: Meeting List</description>
+    <description>Meeting calendar list Inspinia</description>
     <artifact>
         <artifactId>${project.artifactId}</artifactId>
         <groupId>${project.groupId}</groupId>

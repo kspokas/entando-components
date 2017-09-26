@@ -10,8 +10,8 @@
     <artifactId>entando-widget-security_banner_light</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-widget-security_banner_light</name>
-    <description>A 3 step demo mortgage banner.</description>
+    <name>Entando Bundle: Security banner light </name>
+    <description>Security banner light .</description>
     <developers>
         <developer>
             <id>d.minnai</id>

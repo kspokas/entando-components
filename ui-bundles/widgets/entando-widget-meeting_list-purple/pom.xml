@@ -10,8 +10,8 @@
     <artifactId>entando-widget-meeting_list-purple</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-widget-meeting_list-purple</name>
-    <description>entando-widget-meeting_list-purple.</description>
+    <name>Entando Bundle: Meeting calendar list Inspinia</name>
+    <description>Meeting calendar list Inspinia</description>
     <developers>
         <developer>
             <id>d.minnai</id>
