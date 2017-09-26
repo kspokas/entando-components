@@ -7,6 +7,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-left_columns_mortgage', 'entando-widget-left_columns_mortgage', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.info key="langs" var="langsVar" />
 <@wp.info key="currentLang" var="currentLangVar" />
+<div class="gray">
 <div class="title-box-icon">
     <h2 class="title">Mortgage Process</h2>
     <div class="progress-dots">
@@ -52,4 +53,11 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
             </div>
         </div>
     </div>
-</div>', 1);
+</div>
+</div>
+<style>
+.gray{
+background: #f1f1f1;
+padding: .6em;
+}
+</style>', 1);
