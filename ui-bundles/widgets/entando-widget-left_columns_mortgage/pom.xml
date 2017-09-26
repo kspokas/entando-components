@@ -10,8 +10,8 @@
     <artifactId>entando-widget-left_columns_mortgage</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-widget-left_columns_mortgage</name>
-    <description>entando-widget-left_columns_mortgage.</description>
+    <name>Entando Bundle: Left  3 steps  Purple</name>
+    <description>Left  3 steps  Purple.</description>
     <developers>
         <developer>
             <id>d.minnai</id>

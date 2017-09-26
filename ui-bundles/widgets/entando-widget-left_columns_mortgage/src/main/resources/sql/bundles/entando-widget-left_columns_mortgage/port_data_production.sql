@@ -1,7 +1,7 @@
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-left_columns_mortgage', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-    <property key="en">entando-widget-left_columns_mortgage</property>
-    <property key="it">entando-widget-left_columns_mortgage </property>
+    <property key="en">Left  3 steps  Purple</property>
+    <property key="it">Left  3 steps  Purple</property>
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-left_columns_mortgage', 'entando-widget-left_columns_mortgage', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>

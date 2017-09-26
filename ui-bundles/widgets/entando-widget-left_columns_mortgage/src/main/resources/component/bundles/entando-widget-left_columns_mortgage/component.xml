@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component>
     <code>entando-widget-left_columns_mortgage</code>
-    <description>Widget: Choose Language</description>
+    <description>Left  3 steps  Purple</description>
     <artifact>
         <artifactId>${project.artifactId}</artifactId>
         <groupId>${project.groupId}</groupId>
