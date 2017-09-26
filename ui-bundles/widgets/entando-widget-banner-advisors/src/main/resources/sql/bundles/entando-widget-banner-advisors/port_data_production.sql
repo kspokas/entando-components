@@ -1,13 +1,13 @@
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('entando-widget-banner-advisors', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-    <property key="en">entando-widget-banner-advisors</property>
-    <property key="it">entando-widget-banner-advisors </property>
+    <property key="en">Banner Advisors purple/light</property>
+    <property key="it">Banner Advisors purple/light </property>
 </properties>', NULL, NULL, NULL, NULL, 1, NULL);
 
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('entando-widget-banner-advisors', 'entando-widget-banner-advisors', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.info key="langs" var="langsVar" />
 <@wp.info key="currentLang" var="currentLangVar" />
-<div class="entando-widget-banner-advisors">
+<div class="banner-advisors">
     <div class="container">
         <div class="row">
             <div class="col-sm-7">

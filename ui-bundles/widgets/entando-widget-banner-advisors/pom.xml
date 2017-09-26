@@ -10,8 +10,8 @@
     <artifactId>entando-widget-banner-advisors</artifactId>
     <groupId>org.entando.entando.bundles.widgets</groupId>
     <packaging>war</packaging>
-    <name>Entando Bundle: entando-widget-banner-advisors</name>
-    <description>entando-widget-banner-advisors.</description>
+    <name>Entando Bundle:Banner Advisors purple/light</name>
+    <description>Banner Advisors purple/light.</description>
     <developers>
         <developer>
             <id>d.minnai</id>
