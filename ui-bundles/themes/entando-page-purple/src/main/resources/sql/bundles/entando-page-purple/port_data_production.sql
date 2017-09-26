@@ -79,6 +79,8 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
               <![endif]-->
               <@c.import url="/WEB-INF/aps/jsp/models/inc/content_inline_editing.jsp" />
               <@c.import url="/WEB-INF/aps/jsp/models/inc/header-inclusions_light.jsp" />
+
+
     </head>
      <body class="purple" data-spy="scroll" data-target="#navbar-menu">
         <!-- Navbar -->
@@ -161,18 +163,18 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
             </div>
         </section>
 
-        <section class="section">
+        <section>
             <!--frame 9-->
             <@wp.show frame=9 />
             <!--frame 9-->
         </section>
-        <section class="section">
+        <section class="">
                 <!--frame 10-->
                 <@wp.show frame=10 />
                 <!--frame 10-->
         </section>
 
-        <section class="section">
+        <section class="">
             <div class="container">
                 <div class="col-md-12">
                     <div class="text-center">
@@ -185,7 +187,7 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
         </section>
 
         <!-- FOOTER -->
-        <footer class="section ">
+        <footer class=" ">
             <div class="container text-center">
                 <div class="row">
                     <div class="col-md-12">

@@ -89,50 +89,51 @@
 
         <section class="section">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-5">
-                        <!--frame 6-->
-                        <wp:show frame="6" />
-                        <!--frame 5-->
-                    </div>
-                    <div class="col-sm-7">
-                        <!--frame 7 frame bpm -->
-                        <wp:show frame="7" />
-                        <!--frame 7-->
-                    </div>
+                <div class="col-sm-4">
+                    <!--frame 6-->
+                    <wp:show frame="6" />
+                    <!--frame 5-->
+                </div>
+                <div class="col-sm-4">
+                    <!--frame 7 frame bpm -->
+                    <wp:show frame="7" />
+                    <!--frame 7-->
+                </div>
+                <div class="col-sm-4">
+                    <!--frame 8 frame bpm -->
+                    <wp:show frame="8" />
+                    <!--frame 8-->
                 </div>
             </div>
         </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="col-sm-12">
-                    <!--frame 9-->
-                    <wp:show frame="9" />
-                    <!--frame 9-->
-                </div>
-            </div>
+        <section>
+            <!--frame 9-->
+            <wp:show frame="9" />
+            <!--frame 9-->
+        </section>
+        <section class="">
+            <!--frame 10-->
+            <wp:show frame="10" />
+            <!--frame 10-->
         </section>
 
-        <section class="section">
+        <section class="">
             <div class="container">
-                <div class="col-sm-12">
-                    <!--frame 10-->
-                    <wp:show frame="10" />
-                    <!--frame 10-->
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <!--frame 11-->
+                        <wp:show frame="11" />
+                    </div>
+                    <!--frame 11-->
                 </div>
             </div>
         </section>
 
         <!-- FOOTER -->
-        <footer class="section ">
-            <div class="container">
+        <footer class=" ">
+            <div class="container text-center">
                 <div class="row">
-                    <div class="col-md-12">
-                        <!--frame 11-->
-                        <wp:show frame="11" />
-                        <!--frame 11-->
-                    </div>
                     <div class="col-md-12">
                         <!--frame 12-->
                         <wp:show frame="12" />
