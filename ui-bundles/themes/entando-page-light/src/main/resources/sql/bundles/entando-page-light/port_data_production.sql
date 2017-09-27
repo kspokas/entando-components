@@ -72,7 +72,7 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
               <@c.import url="/WEB-INF/aps/jsp/models/inc/content_inline_editing.jsp" />
               <@c.import url="/WEB-INF/aps/jsp/models/inc/header-inclusions_light.jsp" />
     </head>
-    <body data-spy="scroll" data-target="#navbar-menu">
+    <body data-spy="scroll" data-target="#navbar-menu" class="light">
 
         <!-- Navbar -->
         <div class="navbar navbar-custom light navbar-fixed-top sticky" role="navigation" id="sticky-nav">
@@ -164,12 +164,12 @@ INSERT INTO pagemodels (code, descr, frames, plugincode, templategui) VALUES ('e
             </div>
         </section>
 
-        <section class="section">
+        <section class="">
             <!--frame 8-->
             <@wp.show frame=8/>
             <!--frame 8-->
         </section>
-        <section class="section">
+        <section class="">
             <!--frame 9-->
             <@wp.show frame=9 />
             <!--frame 9-->

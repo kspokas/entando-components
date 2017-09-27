@@ -43,14 +43,14 @@
         <module>misc/entando-misc-bootstrap</module>
         <module>misc/entando-misc-inspinia</module>
         <module>themes/entando-page-inspinia</module>
-        <module>widgets/entando-language_choose_inspinia</module>
-        <module>widgets/entando-language_choose_purple_light</module>
         <module>widgets/entando-widget-navigation_bar_inspinia</module>
         <module>widgets/entando-widget-login_form_inspinia</module>
         <module>widgets/entando-widget-search_form_inspinia</module>
         <module>widgets/entando-widget-search_result_inspinia</module>
         <module>widgets/entando-widget-3-steps-mortgage-light</module>
         <module>content-types/entando-content-generic</module>
+        <module>widgets/entando-language_choose_inspinia</module>
+        <module>widgets/entando-language_choose_purple_light</module>
         <module>widgets/entando-widget-language_choose</module>
         <module>widgets/entando-widget-banner-advisors</module>
         <module>widgets/entando-widget-left_columns_mortgage</module>

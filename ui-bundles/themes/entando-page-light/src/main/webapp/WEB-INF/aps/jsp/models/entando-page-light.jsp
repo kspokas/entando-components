@@ -113,13 +113,13 @@
             </div>
         </section>
 
-        <section class="section">
+        <section class="">
             <!--frame 8-->
             <wp:show frame="8"/>
             <!--frame 8-->
         </section>
 
-        <section class="section">
+        <section class="">
             <!--frame 9-->
             <wp:show frame="9" />
             <!--frame 9-->
