@@ -39,3 +39,11 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
     </@wp.freemarkerTemplateParameter>
 </ul>', 1);
 
+INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('ESLC_LANGUAGE', 'en', 'Language');
+INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('ESLC_LANGUAGE', 'it', 'Lingua');
+
+INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('ESLC_LANG_it', 'en', 'Italiano');
+INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('ESLC_LANG_it', 'it', 'Italiano');
+
+INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('ESLC_LANG_en', 'en', 'English');
+INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('ESLC_LANG_en', 'it', 'English');
