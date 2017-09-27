@@ -62,7 +62,7 @@
         <module>widgets/entando-widget-data_report_tweets</module>
         <module>misc/entando-misc-light</module>
         <module>themes/entando-page-light</module>
-        <module>themes/entando-page-purple</module>
+        <!--        <module>themes/entando-page-purple</module>-->
         <module>widgets/entando-widget-banner-main-page</module>
         <module>widgets/entando-widget-banner_avarage_light</module>
         <module>widgets/entando-widget-banner_main_page_light</module>
