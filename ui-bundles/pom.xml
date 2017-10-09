@@ -67,6 +67,7 @@
         <module>widgets/entando-widget-banner_avarage_light</module>
         <module>widgets/entando-widget-banner_main_page_light</module>
         <module>widgets/entando-widget-security_banner_light</module>
+        <module>widgets/entando-widget-lender-login</module>
         <!--
         <module>app-views/entando-app-view-addressbook-default</module>
         <module>widgets/entando-widget-navigation_bar</module>
