@@ -6,7 +6,7 @@
 <s:set var="attributeHasFieldErrorVar" value="#attributeFieldErrorsVar != null && !#attributeFieldErrorsVar.isEmpty()" />
 <s:set var="htmlIdPrefix">$${formTypeCode}$$-$${formTypeVersion}$$-$${attributeName}$$</s:set>
 
-<s:set name="currentAttachedFileVar" value="#attributeVar.attachedFile"/>
+<s:set var="currentAttachedFileVar" value="#attributeVar.attachedFile"/>
 	<s:if test="#currentAttachedFileVar != null">
 		<a class="noborder" href="<s:url action="viewFileResource" namespace="/do/jpwebform/Form/Resource" >
 			<s:param name="parentAttributeName" value="%{#parentAttribute.name}" />

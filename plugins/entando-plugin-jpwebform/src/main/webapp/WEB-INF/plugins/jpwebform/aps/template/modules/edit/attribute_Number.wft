@@ -7,10 +7,10 @@
 <s:set var="htmlIdPrefix">$${formTypeCode}$$-$${formTypeVersion}$$-$${attributeName}$$</s:set>
 
 <s:if test="#attributeVar.failedNumberString == null">
-	<s:set name="numberAttributeValue" value="#attributeVar.value" />
+	<s:set var="numberAttributeValue" value="#attributeVar.value" />
 </s:if>
 <s:else>
-	<s:set name="numberAttributeValue" value="#attributeVar.failedNumberString" />
+	<s:set var="numberAttributeValue" value="#attributeVar.failedNumberString" />
 </s:else>
 <wpsf:textfield useTabindexAutoIncrement="true" id="$${formTypeCode}$$-$${formTypeVersion}$$-$${attributeName}$$" 
 		name="%{#attributeFieldNameVar}" value="%{#numberAttributeValue}"

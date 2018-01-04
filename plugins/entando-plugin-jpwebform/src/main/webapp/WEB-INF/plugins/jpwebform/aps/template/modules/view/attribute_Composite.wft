@@ -1,9 +1,9 @@
 <%-- this is auto-generated code --BEGIN-- --%>
-<s:set name="masterCompositeAttributeTracer" value="#attributeTracer" />
-<s:set name="masterCompositeAttribute" value="#attributeVar" />
+<s:set var="masterCompositeAttributeTracer" value="#attributeTracer" />
+<s:set var="masterCompositeAttribute" value="#attributeVar" />
 <s:iterator value="#attributeVar.attributes" var="attributeVar">
-<s:set name="attributeTracer" value="#masterCompositeAttributeTracer.getCompositeTracer(#masterCompositeAttribute)"></s:set>
-<s:set name="parentAttribute" value="#masterCompositeAttribute"></s:set>
+<s:set var="attributeTracer" value="#masterCompositeAttributeTracer.getCompositeTracer(#masterCompositeAttribute)"></s:set>
+<s:set var="parentAttribute" value="#masterCompositeAttribute"></s:set>
 	<div class="control-group">
 		<div class="control-label" for="">
 			<label for="<s:property value="%{#attributeTracer.getFormFieldName(#attributeVar)}" />"><s:property value="#attributeVar.name"/></label>
@@ -44,7 +44,7 @@
 
 				<s:elseif test="#attributeVar.type == 'CheckBox'">
 					<s:if test="#lang.default">
-						<s:set name="checkedValue" value="%{#attributeVar.booleanValue != null && #attributeVar.booleanValue ==true}" />
+						<s:set var="checkedValue" value="%{#attributeVar.booleanValue != null && #attributeVar.booleanValue ==true}" />
 						<s:if test="%{#checkedValue}"><s:text name="label.yes"/></s:if>
 						<s:else><s:text name="label.no"/></s:else>
 					</s:if>
@@ -73,7 +73,7 @@
 				</s:elseif>
 
 				<s:elseif test="#attributeVar.type == 'File'">
-					<s:set name="currentAttachedFileVar" value="#attributeVar.attachedFile"></s:set>
+					<s:set var="currentAttachedFileVar" value="#attributeVar.attachedFile"></s:set>
 					<s:if test="#currentAttachedFileVar != null">
 						<a class="noborder" href="<s:url action="viewFileResource" namespace="/do/jpwebform/Form/Resource" >
 							<s:param name="parentAttributeName" value="%{#parentAttribute.name}" />
@@ -125,9 +125,9 @@
 	</div>
 
 </s:iterator>
-<s:set name="attributeTracer" value="#masterCompositeAttributeTracer" />
-<s:set name="attributeVar" value="#masterCompositeAttribute" />
-<s:set name="parentAttribute" value=""></s:set>
+<s:set var="attributeTracer" value="#masterCompositeAttributeTracer" />
+<s:set var="attributeVar" value="#masterCompositeAttribute" />
+<s:set var="parentAttribute" value=""></s:set>
 
 
 <%-- this is auto-generated code --END-- --%>
