@@ -124,13 +124,13 @@ public class StepPreviewAction extends AbstractConfigAction implements ServletRe
 		IPageManager pageManager = this.getPageManager();
 		String pageDestCode = this.getPreviewPageCode();
 		if (null == pageDestCode || pageDestCode.trim().length() == 0) {
-			if (null == pageDestCode || null == pageManager.getPage(pageDestCode)) {
+			if (null == pageDestCode || null == pageManager.getDraftPage(pageDestCode)) {
 				String[] args = {pageDestCode};
 				this.addFieldError("previewPageCode", this.getText("error.content.preview.pageNotValid", args));
 				return null;
 			}
 		}
-		if (null == pageManager.getPage(pageDestCode)) {
+		if (null == pageManager.getDraftPage(pageDestCode)) {
 			String[] args = {pageDestCode};
 			this.addFieldError("previewPageCode", this.getText("error.content.preview.pageNotFound", args));
 			releaseSession();
@@ -151,8 +151,8 @@ public class StepPreviewAction extends AbstractConfigAction implements ServletRe
 		reqCtx.addExtraParam(SystemConstants.EXTRAPAR_CURRENT_LANG, currentLang);
 		IPageManager pageManager = this.getPageManager();
 		IPage pageDest = null;
-		if(pageDestCode != null || pageDestCode.isEmpty()){
-			pageDest = pageManager.getPage(pageDestCode);
+		if (pageDestCode != null || pageDestCode.isEmpty()){
+			pageDest = pageManager.getDraftPage(pageDestCode);
 		} else {
 			//TODO ottenere una nuova pagina
 			pageDest = new Page();

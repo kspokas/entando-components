@@ -24,7 +24,6 @@ package org.entando.entando.plugins.jpwebform.aps.tags;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.ServletRequest;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.tagext.TagSupport;
 
@@ -71,7 +70,7 @@ public class PageTag extends TagSupport {
 				typeCode = message.getTypeCode();
 			}
 			//Object formInfo = null;
-			List<IPage> showletUtilizers = pageManager.getWidgetUtilizers(JpwebformSystemConstants.WIDGET_NAME_FORM);
+			List<IPage> showletUtilizers = pageManager.getOnlineWidgetUtilizers(JpwebformSystemConstants.WIDGET_NAME_FORM);
 			for (int i = 0; i < showletUtilizers.size(); i++) {
 				IPage page = showletUtilizers.get(i);
 				Widget[] widgets = page.getWidgets();

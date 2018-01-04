@@ -43,7 +43,7 @@ public class AbstractPreviewAction extends AbstractConfigAction{
 		List<SelectItem> pageItems = new ArrayList<SelectItem>();
 		try {
 			IPageManager pageManager = this.getPageManager();
-			List<IPage> pages = pageManager.getWidgetUtilizers("jpwebform_form");
+			List<IPage> pages = pageManager.getDraftWidgetUtilizers("jpwebform_form");
 			for (int i = 0; i < pages.size(); i++) {
 				IPage page = pages.get(i);
 				String pageCode = page.getCode();

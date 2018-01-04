@@ -128,7 +128,7 @@ public class WebFormListWidgetAction extends SimpleWidgetConfigAction  {
 	public List<IPage> getPages() {
 		if (this._pages == null) {
 			this._pages = new ArrayList<IPage>();
-			IPage root = this.getPageManager().getRoot();
+			IPage root = this.getPageManager().getDraftRoot();
 			this.addPages(root, this._pages);
 		}
 		return this._pages;
