@@ -34,6 +34,7 @@ import com.agiletec.aps.system.services.page.IPage;
 import com.agiletec.aps.util.ApsProperties;
 import com.agiletec.apsadmin.portal.specialwidget.SimpleWidgetConfigAction;
 import com.agiletec.plugins.jacms.aps.system.services.content.widget.IContentListWidgetHelper;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author S.Loru
@@ -48,7 +49,7 @@ public class WebFormListWidgetAction extends SimpleWidgetConfigAction  {
 		try {
 			Boolean status = null;
 			String statusString = this.getWidget().getConfig().getProperty(JpwebformSystemConstants.WIDGET_PARAM_STATUS);
-			if(null != statusString || statusString.isEmpty()){
+			if (!StringUtils.isBlank(statusString)){
 				status = Boolean.valueOf(statusString);
 			}
 			this.setStatus(status);
@@ -60,18 +61,16 @@ public class WebFormListWidgetAction extends SimpleWidgetConfigAction  {
 			_logger.error("error in init", t);
 		}
 		return result;
-
 	}
-
 
 	@Override
 	public void validate() {
 		super.validate();
 		try {
-			if (this.getActionErrors().size()>0 || this.getFieldErrors().size()>0) {
-				this.setShowlet(super.createNewShowlet());
-				return;
-			}
+			this.setWidget(super.createNewWidget());
+			//if (this.getActionErrors().size()>0 || this.getFieldErrors().size()>0) {
+			//	return;
+			//}
 			this.validateTitle();
 			this.validateLink();
 		} catch (Throwable t) {
@@ -173,10 +172,11 @@ public class WebFormListWidgetAction extends SimpleWidgetConfigAction  {
 	public void setStatus(Boolean _status) {
 		this._status = _status;
 	}
-
+	
 	private String _maxElemForItem;
 	private String _maxElements;
 	private List<IPage> _pages;
 	private IFormManager _formManager;
 	private Boolean _status;
+	
 }
