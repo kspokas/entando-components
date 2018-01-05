@@ -269,11 +269,11 @@
                                 <td  class="text-center monospace"><code><s:date name="#message.creationDate" format="dd/MM/yyyy HH:ss"/></code></td>
                                 <td class="text-center">
                                     <s:if test="#message.completed">
-                                        <s:set var="iconImage" id="iconImage">icon fa fa-check text-success</s:set>
+                                        <s:set var="iconImage">icon fa fa-check text-success</s:set>
                                         <s:set var="thereIsAnswer" value="%{getText('label.answered')}" />
                                     </s:if>
                                     <s:else>
-                                        <s:set var="iconImage" id="iconImage">icon fa fa-exclamation</s:set>
+                                        <s:set var="iconImage">icon fa fa-exclamation</s:set>
                                         <s:set var="thereIsAnswer" value="%{getText('label.waiting')}" />
                                     </s:else>
                                         <span title="<s:property value="thereIsAnswer" />" class="<s:property value="iconImage" />"></span>

@@ -216,7 +216,7 @@ public class FormManager extends ApsEntityManager implements IFormManager, Entit
 	/**
 	 * Returns the notifier's configuration for a given type of message.
 	 *
-	 * @param type The type of the message.
+	 * @param typeCode The type of the message.
 	 * @return The notifier's configuration for a given type of message.
 	 */
 	@Override
@@ -256,6 +256,7 @@ public class FormManager extends ApsEntityManager implements IFormManager, Entit
 		}
 	}
 
+	@Override
 	public OGNL_MESSAGES verifyOgnlExpression(String expression, Message entity, String currentUser) throws ApsSystemException {
 		if (!StringUtils.isBlank(expression)) {
 			try {
@@ -307,7 +308,7 @@ public class FormManager extends ApsEntityManager implements IFormManager, Entit
 	/**
 	 * Remove the notifier's configuration for the given type of message.
 	 *
-	 * @param type The type of the message.
+	 * @param typeCode The type of the message.
 	 * @throws ApsSystemException
 	 */
 	protected void removeNotifierConfig(String typeCode) throws ApsSystemException {
@@ -426,7 +427,7 @@ public class FormManager extends ApsEntityManager implements IFormManager, Entit
 		return message;
 	}
 
-//	@Override
+	@Override
 	public Message getMessage(String id, TypeVersionGuiConfig config) throws ApsSystemException {
 		Message message = null;
 		try {

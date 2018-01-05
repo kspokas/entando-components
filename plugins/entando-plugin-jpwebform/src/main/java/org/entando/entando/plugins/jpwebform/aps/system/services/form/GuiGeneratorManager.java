@@ -45,7 +45,7 @@ import org.springframework.web.context.ServletContextAware;
 import com.agiletec.aps.system.common.AbstractService;
 import com.agiletec.aps.system.common.entity.model.attribute.AttributeInterface;
 import com.agiletec.aps.system.exception.ApsSystemException;
-import com.agiletec.aps.util.FileTextReader;
+import org.entando.entando.aps.system.services.storage.IStorageManager;
 
 /**
  * @author E.Santoboni
@@ -53,6 +53,21 @@ import com.agiletec.aps.util.FileTextReader;
 public class GuiGeneratorManager extends AbstractService implements IGuiGeneratorManager, ServletContextAware {
 
 	private static final Logger _logger =  LoggerFactory.getLogger(GuiGeneratorManager.class);
+	
+	public static final String CSS_SUB_FOLDER = "plugins/jpwebform/static/css/";
+	private static final String WEBFORM_APS_FOLDER = "/WEB-INF/plugins/jpwebform/aps/";
+	@Deprecated
+	public static final String GUI_FOLDER = WEBFORM_APS_FOLDER + "jsp/internalservlet/form/";
+	public static final String TEMPLATE_FOLDER = WEBFORM_APS_FOLDER + "template/";
+	private static final String COMMON_MODULES_FOLDER = TEMPLATE_FOLDER + "step/";
+	private static final String ATTRIBUTES_MODULES_FOLDER = TEMPLATE_FOLDER + "modules/";
+	
+	public static final String MARKER_START = "[[#";
+	public static final String MARKER_END = "#]]";
+	
+	private IFormManager _formManager;
+	private IStorageManager _storageManager;
+	private ServletContext _servletContext;
 
 	@Override
 	public void init() throws Exception {
@@ -68,10 +83,8 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 		String formTypeCode = config.getFormTypeCode();
 		try {
 			String folderPath = this.getServletContext().getRealPath("/");
-			String baseGuiSubFolder = "/WEB-INF/plugins/jpwebform/aps/jsp/internalservlet/form/";
-			String baseCssSubFolder = "/plugins/jpwebform/static/css/";
-			String guiFolder = folderPath + baseGuiSubFolder + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
-			String cssFolder = this.getResourceDiskRootFolder() + baseCssSubFolder + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
+			String guiFolder = folderPath + GUI_FOLDER + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
+			String cssFolder = CSS_SUB_FOLDER + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
 			List<StepGuiConfig> guiConfigs = config.getGuiConfigs();
 			for (int i = 0; i < guiConfigs.size(); i++) {
 				StepGuiConfig stepGuiConfig = guiConfigs.get(i);
@@ -93,7 +106,8 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 					if (null == contentCss) {
 						contentCss = "";
 					}
-					this.save(cssFileName, cssFolder, contentCss);
+					this.getStorageManager().saveFile(cssPath, false, new ByteArrayInputStream(contentCss.getBytes("UTF-8")));
+					//this.save(cssFileName, cssFolder, contentCss);
 				}
 			}
 		} catch (Throwable t) {
@@ -112,10 +126,8 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 		String formTypeCode = config.getFormTypeCode();
 		try {
 			String folderPath = this.getServletContext().getRealPath("/");
-			String baseGuiSubFolder = "/WEB-INF/plugins/jpwebform/aps/jsp/internalservlet/form/";
-			String baseCssSubFolder = "/plugins/jpwebform/static/css/";
-			String guiFolder = folderPath + baseGuiSubFolder + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
-			String cssFolder = this.getResourceDiskRootFolder() + baseCssSubFolder + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
+			String guiFolder = folderPath + GUI_FOLDER + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
+			String cssFolder = CSS_SUB_FOLDER + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
 			String guiFileName = "entryStep_" + config.getStepCode() + ".jsp";
 			String cssFileName = "entryStep_" + config.getStepCode() + ".css";
 			StepsConfig stepsConfig = this.getFormManager().getStepsConfig(formTypeCode);
@@ -129,7 +141,9 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 				generatePreviewByStepCode("ending", config);
 			} else {
 				this.save(guiFileName, guiFolder, "");
-				this.save(cssFileName, cssFolder, "");
+				String cssPath = cssFolder + cssFileName;
+				this.getStorageManager().saveFile(cssPath, false, new ByteArrayInputStream("".getBytes("UTF-8")));
+				//this.save(cssFileName, cssFolder, "");
 			}
 		} catch (Throwable t) {
 			_logger.error("Error in generatePreview", t);
@@ -137,14 +151,12 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 		}
 	}
 	
-	private void generatePreviewByStepCode(String stepCode, StepGuiConfig config) throws ApsSystemException{
+	private void generatePreviewByStepCode(String stepCode, StepGuiConfig config) throws Throwable {
 		Integer typeVersionCode = 0;
 		String formTypeCode = config.getFormTypeCode();
 		String folderPath = this.getServletContext().getRealPath("/");
-		String baseGuiSubFolder = "/WEB-INF/plugins/jpwebform/aps/jsp/internalservlet/form/";
-		String baseCssSubFolder = "/plugins/jpwebform/static/css/";
-		String guiFolder = folderPath + baseGuiSubFolder + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
-		String cssFolder = this.getResourceDiskRootFolder() + baseCssSubFolder + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
+		String guiFolder = folderPath + GUI_FOLDER + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
+		String cssFolder = CSS_SUB_FOLDER + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
 		String guiFileName = "entryStep_" + stepCode + ".jsp";
 		String cssFileName = "entryStep_" + stepCode + ".css";
 		StepGuiConfig stepGuiConfig = this.getFormManager().getWorkGuiConfig(formTypeCode, stepCode);
@@ -157,7 +169,9 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 			stepGui = this.generateGui(stepGuiConfig, typeVersionCode);
 			contentCss = stepGuiConfig.getUserCss();
 		}
-		this.save(cssFileName, cssFolder, contentCss);
+		String cssPath = cssFolder + cssFileName;
+		this.getStorageManager().saveFile(cssPath, false, new ByteArrayInputStream(contentCss.getBytes("UTF-8")));
+		//this.save(cssFileName, cssFolder, contentCss);
 		this.save(guiFileName, guiFolder, stepGui);
 	}
 	
@@ -166,26 +180,22 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 		Integer typeVersionCode = 0;
 		try {
 			String folderPath = this.getServletContext().getRealPath("/");
-			String baseGuiSubFolder = "/WEB-INF/plugins/jpwebform/aps/jsp/internalservlet/form/";
-			String baseCssSubFolder = "/plugins/jpwebform/static/css/";
-			String guiFolder = folderPath + baseGuiSubFolder + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
-			String cssFolder = this.getResourceDiskRootFolder() + baseCssSubFolder + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
-			
+			String guiFolder = folderPath + GUI_FOLDER + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
+			String cssFolder = CSS_SUB_FOLDER + formTypeCode + File.separator + typeVersionCode.toString() + File.separator;
 			StepsConfig stepsConfig = this.getFormManager().getStepsConfig(formTypeCode);
 			if(stepsConfig != null){
 				List<Step> steps = stepsConfig.getSteps();
 				for (int i = 0; i < steps.size(); i++) {
-					String contentCss = "";
-					String stepGui = "";
 					Step step = steps.get(i);
 					String guiFileName = "entryStep_" + step.getCode() + ".jsp";
 					String cssFileName = "entryStep_" + step.getCode() + ".css";
 					StepGuiConfig stepGuiConfig = this.getFormManager().getWorkGuiConfig(formTypeCode, step.getCode());
-					stepGui = this.generateGui(stepGuiConfig, typeVersionCode);
-					contentCss = stepGuiConfig.getUserCss();
-					this.save(cssFileName, cssFolder, contentCss);
+					String stepGui = this.generateGui(stepGuiConfig, typeVersionCode);
+					String contentCss = stepGuiConfig.getUserCss();
+					String cssPath = cssFolder + cssFileName;
+					this.getStorageManager().saveFile(cssPath, false, new ByteArrayInputStream(contentCss.getBytes("UTF-8")));
+					//this.save(cssFileName, cssFolder, contentCss);
 					this.save(guiFileName, guiFolder, stepGui);
-					contentCss = "";
 				}
 			}
 		} catch (Throwable t) {
@@ -194,12 +204,10 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 		}
 	}
 	
-	
-	
 	private String generateGui(StepGuiConfig stepGuiConfig, Integer typeVersionCode) throws ApsSystemException {
 		StringBuilder gui = new StringBuilder();
 		try {
-			String startInclude = this.getText(COMMON_MODULES_FOLDER + "entryStep_start.wft", this.getServletContext());
+			String startInclude = FormUtils.getText(COMMON_MODULES_FOLDER + "entryStep_start.wft", this.getServletContext());
 			gui.append(this.parseInclude(startInclude, null, stepGuiConfig, typeVersionCode));
 			String userContentGui = stepGuiConfig.getUserGui();
 			int postfixLen = MARKER_END.length();
@@ -263,37 +271,37 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 			} else {
 				boolean checkStepGui = this.getFormManager().checkStepGui(stepGuiConfig.getFormTypeCode());
 				if (contentMarker.equals("title")) {
-					include = this.getText(COMMON_MODULES_FOLDER + "entryStep_title.wft", this.getServletContext());
+					include = FormUtils.getText(COMMON_MODULES_FOLDER + "entryStep_title.wft", this.getServletContext());
 				} else if (contentMarker.equals("form-start")) {
 					if(typeVersionCode == 0) {
-						include = this.getText(COMMON_MODULES_FOLDER + "entryStep_form-start_preview.wft", this.getServletContext());
+						include = FormUtils.getText(COMMON_MODULES_FOLDER + "entryStep_form-start_preview.wft", this.getServletContext());
 					} else {
-						include = this.getText(COMMON_MODULES_FOLDER + "entryStep_form-start.wft", this.getServletContext());
+						include = FormUtils.getText(COMMON_MODULES_FOLDER + "entryStep_form-start.wft", this.getServletContext());
 					}
 				} else if (contentMarker.equals("form-end")) {
 					if(typeVersionCode == 0) {
-						include = this.getText(COMMON_MODULES_FOLDER + "entryStep_form-end_preview.wft", this.getServletContext());
+						include = FormUtils.getText(COMMON_MODULES_FOLDER + "entryStep_form-end_preview.wft", this.getServletContext());
 					} else {
-						include = this.getText(COMMON_MODULES_FOLDER + "entryStep_form-end.wft", this.getServletContext());
+						include = FormUtils.getText(COMMON_MODULES_FOLDER + "entryStep_form-end.wft", this.getServletContext());
 					}
 				} else if (contentMarker.equals("form-back")) {
 						if(typeVersionCode == 0 && checkStepGui) {
-							include = this.getText(COMMON_MODULES_FOLDER + "entryStep_form-back_preview.wft", this.getServletContext());
+							include = FormUtils.getText(COMMON_MODULES_FOLDER + "entryStep_form-back_preview.wft", this.getServletContext());
 						} else if(checkStepGui){
-							include = this.getText(COMMON_MODULES_FOLDER + "entryStep_form-back.wft", this.getServletContext());
+							include = FormUtils.getText(COMMON_MODULES_FOLDER + "entryStep_form-back.wft", this.getServletContext());
 						} else {
 							include ="";
 						}
 				} else if (contentMarker.equals("form-submit")) {
 						if(typeVersionCode == 0 && checkStepGui) {
-							include = this.getText(COMMON_MODULES_FOLDER + "entryStep_form-submit_preview.wft", this.getServletContext());
+							include = FormUtils.getText(COMMON_MODULES_FOLDER + "entryStep_form-submit_preview.wft", this.getServletContext());
 						} else if(checkStepGui){
-							include = this.getText(COMMON_MODULES_FOLDER + "entryStep_form-submit.wft", this.getServletContext());
+							include = FormUtils.getText(COMMON_MODULES_FOLDER + "entryStep_form-submit.wft", this.getServletContext());
 						} else {
 							include = "";
 						}
 				} else if (contentMarker.equals("inputmail")) {
-					include = this.getText(COMMON_MODULES_FOLDER + "entryStep_form-inputmail.wft", this.getServletContext());
+					include = FormUtils.getText(COMMON_MODULES_FOLDER + "entryStep_form-inputmail.wft", this.getServletContext());
 				}
 				if (null == include) {
 					return marker;
@@ -334,14 +342,14 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 					} else {
 						includeFileName = "attribute_label_i18n.wft";
 					}
-					String infoLabel = this.getText(ATTRIBUTES_MODULES_FOLDER + includeFileName, this.getServletContext());
+					String infoLabel = FormUtils.getText(ATTRIBUTES_MODULES_FOLDER + includeFileName, this.getServletContext());
 					parsed = this.parseInclude(infoLabel, extraMarker, stepGuiConfig, typeVersionCode);
 				} else if (markerType.equals("info")) {
 					String infoInclude= "";
 					if (typeVersionCode == 0) {
-						infoInclude = this.getText(ATTRIBUTES_MODULES_FOLDER + "attribute_info_preview.wft", this.getServletContext());
+						infoInclude = FormUtils.getText(ATTRIBUTES_MODULES_FOLDER + "attribute_info_preview.wft", this.getServletContext());
 					} else {
-						infoInclude = this.getText(ATTRIBUTES_MODULES_FOLDER + "attribute_info.wft", this.getServletContext());
+						infoInclude = FormUtils.getText(ATTRIBUTES_MODULES_FOLDER + "attribute_info.wft", this.getServletContext());
 					}
 					parsed = this.parseInclude(infoInclude, extraMarker, stepGuiConfig, typeVersionCode);
 				} else if (markerType.equals("input")) {
@@ -368,11 +376,11 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 			String subfolder = (isEdit) ? "edit" : "view";
 			String folder = ATTRIBUTES_MODULES_FOLDER + subfolder + File.separator;
 			if(typeVersionCode == 0){
-				include = include.concat(this.getText(ATTRIBUTES_MODULES_FOLDER + "attribute_PreviewSource.wft", this.getServletContext()));
+				include = include.concat(FormUtils.getText(ATTRIBUTES_MODULES_FOLDER + "attribute_PreviewSource.wft", this.getServletContext()));
 			} else {
-				include = include.concat(this.getText(ATTRIBUTES_MODULES_FOLDER + "attribute_Source.wft", this.getServletContext()));
+				include = include.concat(FormUtils.getText(ATTRIBUTES_MODULES_FOLDER + "attribute_Source.wft", this.getServletContext()));
 			}
-			include = include.concat(this.getText(folder + "attribute_" + attribute.getType() + ".wft", this.getServletContext()));
+			include = include.concat(FormUtils.getText(folder + "attribute_" + attribute.getType() + ".wft", this.getServletContext()));
 		} catch (Throwable t) {
 			_logger.error("Error extracting include {}", property, t);
 			throw new ApsSystemException("Error extracting include " + property, t);
@@ -432,6 +440,7 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 		return parsedText.toString();
 	}
 	
+	@Deprecated
 	protected void save(String filename, String folder, String content) {
 		FileOutputStream outStream = null;
 		InputStream is = null;
@@ -465,34 +474,19 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 		}
 	}
 	
-	static protected String getText(String path, ServletContext servletContext) throws Throwable {
-		String text = null;
-		InputStream is = null;
-		try {
-			is = servletContext.getResourceAsStream(path);
-			text = FileTextReader.getText(is);
-		} catch (Throwable t) {
-			throw new ApsSystemException("Error readind text", t);
-		} finally {
-			if (null != is) {
-				is.close();
-			}
-		}
-		return text;
-	}
-	
-	protected String getResourceDiskRootFolder() {
-		return _resourceDiskRootFolder;
-	}
-	public void setResourceDiskRootFolder(String resourceDiskRootFolder) {
-		this._resourceDiskRootFolder = resourceDiskRootFolder;
-	}
-	
 	protected IFormManager getFormManager() {
 		return _formManager;
 	}
 	public void setFormManager(IFormManager formManager) {
 		this._formManager = formManager;
+	}
+
+	protected IStorageManager getStorageManager() {
+		return _storageManager;
+	}
+
+	public void setStorageManager(IStorageManager storageManager) {
+		this._storageManager = storageManager;
 	}
 	
 	protected ServletContext getServletContext() {
@@ -503,16 +497,5 @@ public class GuiGeneratorManager extends AbstractService implements IGuiGenerato
 	public void setServletContext(ServletContext servletContext) {
 		this._servletContext = servletContext;
 	}
-
-	private String _resourceDiskRootFolder;
 	
-	private IFormManager _formManager;
-	private ServletContext _servletContext;
-	
-	public static final String TEMPLATE_FOLDER = "/WEB-INF/plugins/jpwebform/aps/template/";
-	private static final String COMMON_MODULES_FOLDER = TEMPLATE_FOLDER + "step/";
-	private static final String ATTRIBUTES_MODULES_FOLDER = TEMPLATE_FOLDER + "modules/";
-	
-	public static final String MARKER_START = "[[#";
-	public static final String MARKER_END = "#]]";
 }

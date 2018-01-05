@@ -407,7 +407,7 @@
 							<wpsa:actionSubParam name="elementIndex" value="%{#elementIndex}" />
 							<wpsa:actionSubParam name="typeCode" value="%{#messageVar.typeCode}" />
 						</wpsa:actionParam>
-						<s:set var="iconImagePath" id="iconImagePath"><wp:resourceURL/>administration/common/img/icons/22x22/attachment.png</s:set>
+						<s:set var="iconImagePath"><wp:resourceURL/>administration/common/img/icons/22x22/attachment.png</s:set>
 						<wpsf:submit 
 							useTabindexAutoIncrement="true" 
 							type="image" 

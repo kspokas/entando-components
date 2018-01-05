@@ -26,7 +26,7 @@
 	<ul class="jpwebform-list jpwebform-list-<s:property value="#attributeVar.type" />" id="$${formTypeCode}$$-$${formTypeVersion}$$-$${attributeName}$$-list">
 </s:if>
 
-		<s:iterator value="#attributeVar.getAttributeList(#lang.code)" id="attributeVar" status="elementStatus">
+		<s:iterator value="#attributeVar.getAttributeList(#lang.code)" var="attributeVar" status="elementStatus">
 			<s:set var="attributeTracer" value="#masterListAttributeTracer.getListElementTracer(#lang, #elementStatus.index)" />
 			<s:set var="elementIndex" value="#elementStatus.index" />
 			<s:if test="null == #operationButtonDisabled"><s:set var="operationButtonDisabled" value="false" /></s:if>

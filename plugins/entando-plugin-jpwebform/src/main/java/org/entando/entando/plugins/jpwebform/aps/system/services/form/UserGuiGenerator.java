@@ -24,9 +24,7 @@ package org.entando.entando.plugins.jpwebform.aps.system.services.form;
 import com.agiletec.aps.system.common.entity.model.IApsEntity;
 import com.agiletec.aps.system.common.entity.model.attribute.AttributeInterface;
 import com.agiletec.aps.system.exception.ApsSystemException;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Properties;
 import javax.servlet.ServletContext;
 import org.entando.entando.plugins.jpwebform.aps.system.services.JpwebformSystemConstants;
 import static org.entando.entando.plugins.jpwebform.aps.system.services.form.GuiGeneratorManager.TEMPLATE_FOLDER;
@@ -68,8 +66,8 @@ public class UserGuiGenerator implements ServletContextAware {
 	public String generateUserGui(Step step, IApsEntity prototype, boolean isFirstStep) throws ApsSystemException, Throwable {
 		StringBuilder gui = new StringBuilder();
 		String attributeType = "";
-		gui.append(GuiGeneratorManager.getText(WFT_TITLE, _servletContext));
-		gui.append(GuiGeneratorManager.getText(WFT_FORMSTART, _servletContext));
+		gui.append(FormUtils.getText(WFT_TITLE, _servletContext));
+		gui.append(FormUtils.getText(WFT_FORMSTART, _servletContext));
 		List<String> attributeNames = (null != step) ? step.getAttributeOrder() : null;
 		if (null != attributeNames && !attributeNames.isEmpty()) {
 			for (int i = 0; i < attributeNames.size(); i++) {
@@ -80,9 +78,9 @@ public class UserGuiGenerator implements ServletContextAware {
 					attributeType = attribute.getType();
 				}
 				if ("Composite".equalsIgnoreCase(attributeType) || "Monolist".equalsIgnoreCase(attributeType)) {
-					gui.append(GuiGeneratorManager.getText(WFT_COMPLEX, _servletContext));
+					gui.append(FormUtils.getText(WFT_COMPLEX, _servletContext));
 				} else {
-					gui.append(GuiGeneratorManager.getText(WFT_SIMPLE, _servletContext));
+					gui.append(FormUtils.getText(WFT_SIMPLE, _servletContext));
 				}
 				gui = new StringBuilder(gui.toString().replaceAll(WFT_NAME_MARKER, attributeName));
 				if (config.isView()) {
@@ -91,11 +89,11 @@ public class UserGuiGenerator implements ServletContextAware {
 			}
 		}
 		if (isFirstStep) {
-			gui.append(GuiGeneratorManager.getText(WFT_FORMACTIONS, _servletContext));
+			gui.append(FormUtils.getText(WFT_FORMACTIONS, _servletContext));
 		} else {
-			gui.append(GuiGeneratorManager.getText(WFT_FORMACTIONSFULL, _servletContext));
+			gui.append(FormUtils.getText(WFT_FORMACTIONSFULL, _servletContext));
 		}
-		gui.append(GuiGeneratorManager.getText(WFT_FORMEND, _servletContext));
+		gui.append(FormUtils.getText(WFT_FORMEND, _servletContext));
 		return gui.toString();
 	}
 
@@ -104,13 +102,14 @@ public class UserGuiGenerator implements ServletContextAware {
 	}
 
 	public String generateEndPointUserGui() throws ApsSystemException, Throwable {
-		return GuiGeneratorManager.getText(WFT_ENDMESSAGE, _servletContext);
+		return FormUtils.getText(WFT_ENDMESSAGE, _servletContext);
 	}
 
 	@Override
 	public void setServletContext(ServletContext servletContext) {
 		this._servletContext = servletContext;
 	}
+	
 	private static final String DEFAULT_GUI_FOLDER = TEMPLATE_FOLDER + "defaultgui/";
 	public static final String WFT_SIMPLE = DEFAULT_GUI_FOLDER + "simple.wft";
 	public static final String WFT_COMPLEX = DEFAULT_GUI_FOLDER + "complex.wft";
@@ -131,4 +130,5 @@ public class UserGuiGenerator implements ServletContextAware {
 	public static final String WFT_INPUT_EDITFALSE = "type=input;edit=false#";
 	
 	private ServletContext _servletContext;
+	
 }

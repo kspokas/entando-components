@@ -8,7 +8,7 @@
 --%>
 		<s:set var="masterListAttributeTracer" value="#attributeTracer" />
 		<s:set var="masterListAttribute" value="#attributeVar" />
-		<s:iterator value="#attributeVar.attributes" id="attributeVar" status="elementStatus">
+		<s:iterator value="#attributeVar.attributes" var="attributeVar" status="elementStatus">
 			<s:set var="attributeTracer" value="#masterListAttributeTracer.getMonoListElementTracer(#elementStatus.index)"></s:set>
 			<s:set var="elementIndex" value="#elementStatus.index" />
 			<s:set var="htmlIdPrefix">$${formTypeCode}$$-$${formTypeVersion}$$-$${attributeName}$$<s:property value="%{#attributeTracer.getFormFieldName(#attributeVar)}" /></s:set>
