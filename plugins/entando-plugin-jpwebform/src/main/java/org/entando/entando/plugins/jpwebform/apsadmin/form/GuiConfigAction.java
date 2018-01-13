@@ -25,7 +25,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.entando.entando.plugins.jpwebform.aps.system.services.JpwebformSystemConstants;
-import org.entando.entando.plugins.jpwebform.aps.system.services.form.IGuiGeneratorManager;
 import org.entando.entando.plugins.jpwebform.aps.system.services.message.model.Step;
 import org.entando.entando.plugins.jpwebform.aps.system.services.message.model.StepGuiConfig;
 import org.entando.entando.plugins.jpwebform.aps.system.services.message.model.StepsConfig;
@@ -167,14 +166,6 @@ public class GuiConfigAction extends AbstractPreviewAction {
 		this._userGui = userGui;
 	}
 	
-	public IGuiGeneratorManager getGuiGeneratorManager() {
-		return _guiGeneratorManager;
-	}
-	
-	public void setGuiGeneratorManager(IGuiGeneratorManager guiGeneratorManager) {
-		this._guiGeneratorManager = guiGeneratorManager;
-	}
-	
 	public int getVersionType() {
 		return _versionType;
 	}
@@ -205,7 +196,6 @@ public class GuiConfigAction extends AbstractPreviewAction {
 	private boolean _overwriteStepGui;
 	private String _error;
 	private int _versionType;
-	private IGuiGeneratorManager _guiGeneratorManager;
 	private String _userGui;
 	private String _userCss;
 

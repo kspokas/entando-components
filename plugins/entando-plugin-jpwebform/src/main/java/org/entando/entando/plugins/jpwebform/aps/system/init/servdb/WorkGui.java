@@ -38,8 +38,7 @@ public class WorkGui implements ExtendedColumnDefinition {
 	
 	@DatabaseField(columnName = "typecode", 
 			dataType = DataType.STRING, 
-			width = 30, 
-			canBeNull = false)
+			width = 30, canBeNull = false)
 	private String _typeCode;
 	
 	@DatabaseField(columnName = "stepcode", 
@@ -55,6 +54,11 @@ public class WorkGui implements ExtendedColumnDefinition {
 	@DatabaseField(columnName = "css", 
 			dataType = DataType.LONG_STRING)
 	private String _css;
+	
+	@DatabaseField(columnName = "guifragmentcode",
+			dataType = DataType.STRING,
+			width = 50, canBeNull = true)
+	private String _guiFragmentCode;
 	
 	@Override
 	public String[] extensions(IDatabaseManager.DatabaseType type) {

@@ -54,6 +54,11 @@ public class Gui implements ExtendedColumnDefinition {
 			dataType = DataType.LONG_STRING)
 	private String _css;
 	
+	@DatabaseField(columnName = "guifragmentcode",
+			dataType = DataType.STRING,
+			width = 50, canBeNull = true)
+	private String _guiFragmentCode;
+	
 	@Override
 	public String[] extensions(IDatabaseManager.DatabaseType type) {
 		String tableName = TABLE_NAME;

@@ -107,7 +107,4 @@ public class PublisherAction extends AbstractPreviewAction {
 		}
 	}
 	
-	
-	
-	
 }

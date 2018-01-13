@@ -60,7 +60,6 @@ public class StepPreviewAction extends AbstractConfigAction implements ServletRe
 			this.setVersionType(0);
 			this.getGuiGeneratorManager().generatePreview(stepGuiConfig);
 			String previewPageCode = this.getRequest().getParameter(PAGE_CODE_PARAM_PREFIX);
-
 			if(this.getRootStepCode() == null){
 				this.setRootStepCode(this.getStepCode());
 			}

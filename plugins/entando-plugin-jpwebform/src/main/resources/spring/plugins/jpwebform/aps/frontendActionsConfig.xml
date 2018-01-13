@@ -29,7 +29,7 @@
 			parent="abstractEntityAction" >
 		<property name="messageManager" ref="jpwebformFormManager" />
 		<property name="guiGeneratorManager" ref="jpwebformGuiGeneratorManager" />
-		<property name="mailManager" ref="jpmailMailManager" />
+		<!-- <property name="mailManager" ref="jpmailMailManager" /> -->
 	</bean>
 	
 	<bean id="jpwebformUserFormListAttributeAction" scope="prototype"

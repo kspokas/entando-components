@@ -22,7 +22,6 @@
 			parent="abstractBaseAction" >
 		<property name="pageManager" ref="PageManager" />
 		<property name="formManager" ref="jpwebformFormManager" />
-		<property name="guiGeneratorManager" ref="jpwebformGuiGeneratorManager" />
 		<property name="langManager" ref="LangManager" />
 	</bean>
 	

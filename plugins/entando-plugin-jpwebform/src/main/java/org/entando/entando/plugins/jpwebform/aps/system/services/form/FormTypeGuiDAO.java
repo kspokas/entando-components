@@ -22,13 +22,11 @@
 package org.entando.entando.plugins.jpwebform.aps.system.services.form;
 
 import com.agiletec.aps.system.common.AbstractDAO;
-import com.agiletec.aps.system.exception.ApsSystemException;
 
 import java.sql.BatchUpdateException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -108,7 +106,8 @@ public class FormTypeGuiDAO extends AbstractDAO implements IFormTypeGuiDAO {
 		try {
 			conn = this.getConnection();
 			conn.setAutoCommit(false);
-			this.deleteWorkGuiConfig(config.getFormTypeCode(), config.getStepCode(), conn);
+			super.executeQueryWithoutResultset(conn, DELETE_WORK_GUI, config.getFormTypeCode(), config.getStepCode());
+			//this.deleteWorkGuiConfig(config.getFormTypeCode(), config.getStepCode(), conn);
 			stat = conn.prepareStatement(ADD_WORK_GUI);
 			//typecode, stepcode, gui, css
 			stat.setString(1, config.getFormTypeCode());
@@ -132,7 +131,8 @@ public class FormTypeGuiDAO extends AbstractDAO implements IFormTypeGuiDAO {
 		try {
 			conn = this.getConnection();
 			conn.setAutoCommit(false);
-			this.deleteAllWorkGuiConfig(typeCode, conn);
+			super.executeQueryWithoutResultset(conn, DELETE_ALL_WORK_GUI, typeCode);
+			//this.deleteAllWorkGuiConfig(typeCode, conn);
 			conn.commit();
 		} catch (Throwable t) {
 			this.executeRollback(conn);
@@ -149,7 +149,8 @@ public class FormTypeGuiDAO extends AbstractDAO implements IFormTypeGuiDAO {
 		try {
 			conn = this.getConnection();
 			conn.setAutoCommit(false);
-			this.deleteWorkGuiConfig(typeCode, stepCode, conn);
+			super.executeQueryWithoutResultset(conn, DELETE_WORK_GUI, typeCode, stepCode);
+			//this.deleteWorkGuiConfig(typeCode, stepCode, conn);
 			conn.commit();
 		} catch (Throwable t) {
 			this.executeRollback(conn);
@@ -159,7 +160,7 @@ public class FormTypeGuiDAO extends AbstractDAO implements IFormTypeGuiDAO {
 			closeConnection(conn);
 		}
 	}
-	
+	/*
 	protected void deleteWorkGuiConfig(String typeCode, String stepCode, Connection conn) throws ApsSystemException {
 		PreparedStatement stat = null;
 		try {
@@ -174,7 +175,8 @@ public class FormTypeGuiDAO extends AbstractDAO implements IFormTypeGuiDAO {
 			closeDaoResources(null, stat);
 		}
 	}
-	
+	*/
+	/*
 	protected void deleteAllWorkGuiConfig(String typeCode, Connection conn) throws ApsSystemException {
 		PreparedStatement stat = null;
 		try {
@@ -188,18 +190,20 @@ public class FormTypeGuiDAO extends AbstractDAO implements IFormTypeGuiDAO {
 			closeDaoResources(null, stat);
 		}
 	}
-
+	*/
 	@Override
 	public void deleteTypeVersion(String typeCode) {
 		Connection conn = null;
-		PreparedStatement stat = null;
+		//PreparedStatement stat = null;
 		try {
 			conn = this.getConnection();
 			conn.setAutoCommit(false);
-			deleteGui(conn, typeCode);
-			stat = conn.prepareStatement(DELETE_VERSION_CONFIG);
-			stat.setString(1, typeCode);
-			stat.executeUpdate();
+			super.executeQueryWithoutResultset(conn, DELETE_GUI, typeCode);
+			//deleteGui(conn, typeCode);
+			super.executeQueryWithoutResultset(conn, DELETE_VERSION_CONFIG, typeCode);
+			//stat = conn.prepareStatement(DELETE_VERSION_CONFIG);
+			//stat.setString(1, typeCode);
+			//stat.executeUpdate();
 			conn.commit();
 		} catch (Throwable t) {
 			this.executeRollback(conn);
@@ -209,18 +213,14 @@ public class FormTypeGuiDAO extends AbstractDAO implements IFormTypeGuiDAO {
 			closeConnection(conn);
 		}
 	}
-	
+	/*
 	private void deleteGui(Connection conn, String typeCode) throws SQLException {
 		PreparedStatement stat;
 		stat = conn.prepareStatement(DELETE_GUI);
 		stat.setString(1, typeCode);
 		stat.executeUpdate();
 	}
-	
-	
-	
-	
-	
+	*/
 	// ***************** ******************
 	
 	@Override
@@ -273,6 +273,7 @@ public class FormTypeGuiDAO extends AbstractDAO implements IFormTypeGuiDAO {
 			stepGuiConfig.setStepCode(res.getString(6));
 			stepGuiConfig.setUserGui(res.getString(7));
 			stepGuiConfig.setUserCss(res.getString(8));
+			stepGuiConfig.setGuiFragmentCode(res.getString(9));
 			config.getGuiConfigs().add(stepGuiConfig);
 		}
 		return config;
@@ -321,6 +322,7 @@ public class FormTypeGuiDAO extends AbstractDAO implements IFormTypeGuiDAO {
 					stat.setString(2, stepGuiConfig.getStepCode());
 					stat.setString(3, stepGuiConfig.getUserGui());
 					stat.setString(4, stepGuiConfig.getUserCss());
+					stat.setString(5, stepGuiConfig.getGuiFragmentCode());
 					stat.addBatch();
 					stat.clearParameters();
 				}
@@ -366,8 +368,9 @@ public class FormTypeGuiDAO extends AbstractDAO implements IFormTypeGuiDAO {
 				stat = conn.prepareStatement("SELECT MAX(" + fieldName + ") FROM jpwebform_typeversions");
 			}
 			res = stat.executeQuery();
-			res.next();
-			id = res.getInt(1);
+			if (res.next()) {
+				id = res.getInt(1);
+			}
 		} catch (Throwable t) {
 			_logger.error("Error extracting max id", t);
 			throw new RuntimeException("Error extracting max id", t);
@@ -377,33 +380,33 @@ public class FormTypeGuiDAO extends AbstractDAO implements IFormTypeGuiDAO {
 		}
 		return id;
 	}
-	/*
-	private static final String SELECT_VERSION_CONFIG_FROM_CODE = // t jpwebform_typeversions   ----   g jpwebform_gui
-		"SELECT t.code, t.typecode, t.version, t.modelxml, t.stepxml, "
-		+ "g.stepcode, g.gui, g.css "
-		+ "FROM jpwebform_typeversions t LEFT JOIN jpwebform_gui g ON t.code = g.code "
-		+ " WHERE t.code = ? ";
-	*/
+	
 	private static final String SELECT_VERSION_CONFIG = // t jpwebform_typeversions   ----   g jpwebform_gui
 		"SELECT t.code, t.typecode, t.version, t.modelxml, t.stepxml, "
-		+ "g.stepcode, g.gui, g.css "
+		+ "g.stepcode, g.gui, g.css, g.guifragmentcode "
 		+ "FROM jpwebform_typeversions t LEFT JOIN jpwebform_gui g ON t.code = g.code "
 		+ " WHERE t.typecode = ? AND t.version = ? ";
 	
-	private static final String DELETE_VERSION_CONFIG = "DELETE FROM jpwebform_typeversions WHERE typecode = ?";
-	private static final String DELETE_GUI = "DELETE FROM jpwebform_gui WHERE jpwebform_gui.code in (select code from jpwebform_typeversions where typecode=?)";
+	private static final String DELETE_VERSION_CONFIG = 
+			"DELETE FROM jpwebform_typeversions WHERE typecode = ?";
+	private static final String DELETE_GUI = 
+			"DELETE FROM jpwebform_gui WHERE jpwebform_gui.code in (select code from jpwebform_typeversions where typecode=?)";
 	
 	private static final String ADD_VERSION_CONFIG = 
 			"INSERT INTO jpwebform_typeversions(code, typecode, version, modelxml, stepxml) VALUES (?, ?, ?, ?, ?)";
 	private static final String ADD_GUI = 
-			"INSERT INTO jpwebform_gui(code, stepcode, gui, css) VALUES (?, ?, ?, ?)";
-	private static final String SELECT_WORK_GUI = "SELECT typecode, stepcode, gui, css FROM jpwebform_workgui WHERE typecode = ? AND stepcode = ?";
-	private static final String SELECT_WORK_GUIS = "SELECT typecode, stepcode, gui, css FROM jpwebform_workgui WHERE typecode = ?";
-	private static final String DELETE_WORK_GUI = "DELETE FROM jpwebform_workgui WHERE typecode = ? AND stepcode = ?";
-	private static final String DELETE_ALL_WORK_GUI = "DELETE FROM jpwebform_workgui WHERE typecode = ?";
-	private static final String ADD_WORK_GUI = "INSERT INTO jpwebform_workgui(typecode, stepcode, gui, css) VALUES (?, ?, ?, ?)";
-
-
+			"INSERT INTO jpwebform_gui(code, stepcode, gui, css, guifragmentcode) VALUES (?, ?, ?, ?, ?)";
+	private static final String SELECT_WORK_GUI = 
+			"SELECT typecode, stepcode, gui, css FROM jpwebform_workgui WHERE typecode = ? AND stepcode = ?";
+	private static final String SELECT_WORK_GUIS = 
+			"SELECT typecode, stepcode, gui, css FROM jpwebform_workgui WHERE typecode = ?";
+	private static final String DELETE_WORK_GUI = 
+			"DELETE FROM jpwebform_workgui WHERE typecode = ? AND stepcode = ?";
+	private static final String DELETE_ALL_WORK_GUI = 
+			"DELETE FROM jpwebform_workgui WHERE typecode = ?";
+	private static final String ADD_WORK_GUI = 
+			"INSERT INTO jpwebform_workgui(typecode, stepcode, gui, css) VALUES (?, ?, ?, ?)";
+	
 }
 /*
  * 

@@ -64,11 +64,20 @@ public class StepGuiConfig {
 	public void setI18nLabels(Map<String, String> i18nLabels) {
 		this._i18nLabels = i18nLabels;
 	}
+
+	public String getGuiFragmentCode() {
+		return _guiFragmentCode;
+	}
+
+	public void setGuiFragmentCode(String guiFragmentCode) {
+		this._guiFragmentCode = guiFragmentCode;
+	}
 	
 	private String _formTypeCode;
 	private String _stepCode;
 	private String _userGui;
 	private String _userCss;
+	private String _guiFragmentCode;
 	private Map<String, String> _i18nLabels = new HashMap<String, String>();
 	
 }

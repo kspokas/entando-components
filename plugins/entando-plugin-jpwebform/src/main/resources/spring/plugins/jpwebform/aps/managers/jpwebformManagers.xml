@@ -7,26 +7,6 @@
 			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd">
 	
-	<!--
-	<bean id="jpwebformEntityTypeDom" 
-			class="org.entando.entando.plugins.jpwebform.aps.system.services.message.parse.MessageTypeDOM" scope="prototype" >
-		<property name="attributeTypes">
-		<map>
-			<entry key="Date"><ref bean="DateAttribute" /></entry>
-			<entry key="Number"><ref bean="NumberAttribute" /></entry>
-			<entry key="Monotext"><ref bean="MonoTextAttribute" /></entry>
-			<entry key="Enumerator"><ref bean="EnumeratorAttribute" /></entry>
-			<entry key="Text"><ref bean="TextAttribute" /></entry>
-			<entry key="Longtext"><ref bean="LongtextAttribute" /></entry>
-			<entry key="Boolean"><ref bean="BooleanAttribute" /></entry>
-			<entry key="CheckBox"><ref bean="CheckBoxAttribute"/></entry>
-			<entry key="ThreeState"><ref bean="ThreeStateBooleanAttribute" /></entry>
-			<entry key="Composite"><ref bean="CompositeAttribute" /></entry>
-		</map>
-		</property>
-	</bean>
-	-->
-	
 	<bean id="jpwebformEntityTypeDom" 
 			class="org.entando.entando.plugins.jpwebform.aps.system.services.form.parse.FormTypeDOM" scope="prototype"
 			parent="baseEntityTypeDom" >
@@ -93,6 +73,7 @@
 			parent="abstractService" >
 		<property name="formManager" ref="jpwebformFormManager" />
 		<property name="storageManager" ref="StorageManager" />
+		<property name="guiFragmentManager" ref="GuiFragmentManager" />
 	</bean>
 	
 	<bean id="jpwebformUserGuiGenerator" class="org.entando.entando.plugins.jpwebform.aps.system.services.form.UserGuiGenerator" >

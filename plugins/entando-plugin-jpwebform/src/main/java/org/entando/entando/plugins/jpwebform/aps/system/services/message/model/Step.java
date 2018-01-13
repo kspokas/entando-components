@@ -30,22 +30,20 @@ import java.util.Map;
  * @author E.Santoboni
  */
 public class Step {
-	
-	
+
 	public Step() {
 	}
-	
-	public Step(String code, boolean builtGui){
+
+	public Step(String code, boolean builtGui) {
 		this.setCode(code);
 		this.setBuiltGui(builtGui);
 	}
 
-	
 	@Override
 	public Step clone() {
 		Step clone = new Step();
 		clone.setCode(this.getCode());
-        clone.setBuiltGui(this.isBuiltGui());
+		clone.setBuiltGui(this.isBuiltGui());
 		clone.setOgnlExpression(this.getOgnlExpression());
 		//clone.setUserGui(this.getUserGui());
 		//clone.setUserCss(this.getUserCss());
@@ -60,10 +58,11 @@ public class Step {
 		}
 		return clone;
 	}
-	
+
 	public String getCode() {
 		return _code;
 	}
+
 	public void setCode(String code) {
 		this._code = code;
 	}
@@ -82,7 +81,7 @@ public class Step {
 	this._type = type;
 	}
 	 */
-	/*
+ /*
 	public String getUserGui() {
 	return _userGui;
 	}
@@ -103,14 +102,15 @@ public class Step {
 	public void setOgnlExpression(String ognlExpression) {
 		this._ognlExpression = ognlExpression;
 	}
-	
+
 	public boolean isBuiltGui() {
 		return _builtGui;
 	}
+
 	public void setBuiltGui(boolean builtGui) {
 		this._builtGui = builtGui;
 	}
-	
+
 	public void addAttributeConfig(String name, boolean view) {
 		AttributeConfig attribute = new AttributeConfig();
 		attribute.setName(name);
@@ -118,43 +118,42 @@ public class Step {
 		this.getAttributeOrder().add(name);
 		this.getAttributeConfigs().put(name, attribute);
 	}
-        
+
 	public void removeAttributeConfig(String name) {
 		this.getAttributeOrder().remove(name);
 		this.getAttributeConfigs().remove(name);
 	}
-	
+
 	public List<String> getAttributeOrder() {
 		return _attributeOrder;
 	}
+
 	public Map<String, AttributeConfig> getAttributeConfigs() {
 		return _attributeConfigs;
 	}
 
-        @Override
-        public int hashCode() {
-            int hash = 7;
-            hash = 37 * hash + (this._code != null ? this._code.hashCode() : 0);
-            return hash;
-        }
-        
-        @Override
-        public boolean equals(Object obj) {
-            if (obj == null) {
-                return false;
-            }
-            if (getClass() != obj.getClass()) {
-                return false;
-            }
-            final Step other = (Step) obj;
-            if ((this._code == null) ? (other._code != null) : !this._code.equals(other._code)) {
-                return false;
-            }
-            return true;
-        }
-	
-        
-        
+	@Override
+	public int hashCode() {
+		int hash = 7;
+		hash = 37 * hash + (this._code != null ? this._code.hashCode() : 0);
+		return hash;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (getClass() != obj.getClass()) {
+			return false;
+		}
+		final Step other = (Step) obj;
+		if ((this._code == null) ? (other._code != null) : !this._code.equals(other._code)) {
+			return false;
+		}
+		return true;
+	}
+
 	private String _code;
 	//private int _order;
 	//private StepType _type;
@@ -164,12 +163,10 @@ public class Step {
 	private String _ognlExpression;
 	private List<String> _attributeOrder = new ArrayList<String>();
 	private Map<String, AttributeConfig> _attributeConfigs = new HashMap<String, AttributeConfig>();
-	
+
 	//public enum StepType {EDIT, SUMMARY, APPROVE}
-	
-        
-        
 	public class AttributeConfig {
+
 		/*
 		@Override
 		public AttributeConfig clone() {
@@ -178,24 +175,26 @@ public class Step {
 			clone.setView(this.isView());
 			return clone;
 		}
-		*/
+		 */
 		public String getName() {
 			return _name;
 		}
+
 		public void setName(String name) {
 			this._name = name;
 		}
-		
+
 		public boolean isView() {
 			return _view;
 		}
+
 		public void setView(boolean view) {
 			this._view = view;
 		}
-		
+
 		private String _name;
 		private boolean _view;
-		
+
 	}
-	
+
 }

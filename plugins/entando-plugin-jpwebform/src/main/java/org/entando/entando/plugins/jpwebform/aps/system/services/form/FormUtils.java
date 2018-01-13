@@ -25,6 +25,7 @@ import com.agiletec.aps.system.exception.ApsSystemException;
 import com.agiletec.aps.util.FileTextReader;
 import java.io.InputStream;
 import javax.servlet.ServletContext;
+import org.apache.commons.codec.digest.DigestUtils;
 
 /**
  * @author E.Santoboni
@@ -45,6 +46,11 @@ public class FormUtils {
 			}
 		}
 		return text;
+	}
+	
+	public static String getGuiFragmentCode(String formTypeCode, Integer typeVersionCode, String stepCode) {
+		String widgetLongKey = "jpwebform_" + formTypeCode + "_" + typeVersionCode + "_" + stepCode;
+		return DigestUtils.md5Hex(widgetLongKey);
 	}
 	
 }

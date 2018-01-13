@@ -46,6 +46,7 @@ public interface IFormManager extends IEntityManager {
 	/**
 	 * Save the given notifier's configuration for a particular type of message.
 	 * @param config The notifier's configuration for a particular type of message.
+	 * @throws ApsSystemException
 	 */
 	public void saveNotifierConfig(MessageTypeNotifierConfig config) throws ApsSystemException;
 
@@ -94,7 +95,7 @@ public interface IFormManager extends IEntityManager {
 	/**
 	 * Create a new message instance of requested type.
 	 *  The new message is instantiated cloning the corresponding prototype.
-	 * @param typeCode The code of the requested type of message, as defined in configuration.
+	 * @param formTypeCode The code of the requested type of message, as defined in configuration.
 	 * @return The requested message (empty).
 	 */
 	public Message createMessageType(String formTypeCode);

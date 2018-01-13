@@ -35,7 +35,7 @@ import com.agiletec.aps.util.SelectItem;
  *
  * @author S.Loru
  */
-public class AbstractPreviewAction extends AbstractConfigAction{
+public class AbstractPreviewAction extends AbstractConfigAction {
 
 	private static final Logger _logger =  LoggerFactory.getLogger(AbstractPreviewAction.class);
 
@@ -69,7 +69,5 @@ public class AbstractPreviewAction extends AbstractConfigAction{
 	}
 
 	private IPageManager _pageManager;
-
-
-
+	
 }

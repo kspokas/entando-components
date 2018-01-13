@@ -44,6 +44,7 @@ import com.agiletec.aps.system.services.page.Widget;
 import com.agiletec.aps.util.ApsProperties;
 import com.agiletec.apsadmin.system.entity.AbstractApsEntityAction;
 import com.agiletec.plugins.jpmail.aps.services.mail.IMailManager;
+import org.entando.entando.plugins.jpwebform.aps.system.services.form.FormUtils;
 
 /**
  * Implementation for action managing Message entity editing operations.
@@ -467,7 +468,7 @@ public class UserFormAction extends AbstractApsEntityAction {
 	public void setMessageManager(IFormManager messageManager) {
 		this._messageManager = messageManager;
 	}
-
+	/*
 	public IMailManager getMailManager() {
 		return _mailManager;
 	}
@@ -475,7 +476,7 @@ public class UserFormAction extends AbstractApsEntityAction {
 	public void setMailManager(IMailManager mailManager) {
 		this._mailManager = mailManager;
 	}
-
+	*/
 	public String getCurrentUserEmail() {
 		IApsEntity profile = (IApsEntity) this.getCurrentUser().getProfile();
 		if (profile != null) {
@@ -484,10 +485,14 @@ public class UserFormAction extends AbstractApsEntityAction {
 		}
 		return "";
 	}
-
-	public void setCurrentUserEmail(String currentUserEmail) {
-		this._currentUserEmail = currentUserEmail;
+	
+	public String getGuiFragmentCode() {
+		return FormUtils.getGuiFragmentCode(this.getCurrentTypeCode(), this.getVersionType(), this.getCurrentStepCode());
 	}
+
+	//public void setCurrentUserEmail(String currentUserEmail) {
+	//	this._currentUserEmail = currentUserEmail;
+	//}
 
 	public String getCustomEmail() {
 		return _customEmail;
@@ -511,7 +516,7 @@ public class UserFormAction extends AbstractApsEntityAction {
 
 	private boolean _sendMail;
 
-	private String _currentUserEmail;
+	//private String _currentUserEmail;
 	private String _customEmail;
 
 	private String _typeCode;
@@ -525,10 +530,9 @@ public class UserFormAction extends AbstractApsEntityAction {
 	private IFormManager _messageManager;
 	private IGuiGeneratorManager _guiGeneratorManager;
 
-	private IMailManager _mailManager;
+	//private IMailManager _mailManager;
 
 	public enum NAVIGATE {
-
 		BACK, FORWARD
 	}
 
